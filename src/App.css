@@ -1,0 +1,29 @@
+#root {
+  display: grid;
+  height: 100%;
+  grid-template-columns: minmax(min-content, 3fr) minmax(min-content, 7fr);
+  grid-template-rows: minmax(min-content, 1fr) minmax(min-content, 10fr);
+  grid-template-areas:
+    "header header"
+    "input-fields resume"
+}
+
+#root {
+  border: solid 1px black;
+}
+
+#root > * {
+  border: solid 1px red;
+}
+
+h1 {
+  grid-area: header;
+}
+
+#input-fields {
+  grid-area: input-fields
+}
+
+#resume {
+  grid-area: resume
+}
