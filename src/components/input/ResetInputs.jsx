@@ -3,7 +3,7 @@ import LoadExampleButton from "./buttons/LoadExampleButton";
 
 const ResetInputs = () => {
   return (
-    <div id="reset-inputs">
+    <div id="resetInputs">
       <ClearResumeButton></ClearResumeButton>
       <LoadExampleButton></LoadExampleButton>
     </div>
@@ -11,3 +11,5 @@ const ResetInputs = () => {
 };
 
 export default ResetInputs;
+
+//TDL input-fields-container input-fields reset-inputs resume-container

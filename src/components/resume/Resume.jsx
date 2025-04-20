@@ -4,7 +4,7 @@ import Experience from './Experience'
 
 const Resume = () => {
   return (
-    <div id="resume-container">
+    <div id="resumeContainer">
       <div id="resume">
         <Header></Header>
         <Education></Education>

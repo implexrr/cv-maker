@@ -6,8 +6,8 @@ import Experience from "./ExperienceInput"
 
 const InputFields = () => {
   return (
-    <div id="input-fields-container">
-      <div id="input-fields">
+    <div id="inputFieldsContainer">
+      <div id="inputFields">
         <ResetInputs></ResetInputs>
         <PersonalDetailsInput></PersonalDetailsInput>
         <EducationInput></EducationInput>
