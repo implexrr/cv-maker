@@ -1,0 +1,19 @@
+@import url(meta.css);
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-y: auto;
+  height: auto;
+  min-height: 100vh
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}

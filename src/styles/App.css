@@ -1,0 +1,87 @@
+@import url(meta.css);
+
+/* ------------------------------------------------------------------------------------- */
+/* Root */
+/* ------------------------------------------------------------------------------------- */
+
+#root {
+  height: auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(min-content, 3fr) minmax(min-content, 7fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+  "header header"
+  "input-fields resume";
+  border: solid 3px blue;
+}
+
+h1 {
+  grid-area: header;
+}
+#input-fields-container {
+  grid-area: input-fields;
+}
+#resume-container {
+  grid-area: resume
+}
+
+#root {
+  border: solid 1px black;
+}
+
+#root > * {
+  border: solid 1px red;
+}
+/* ------------------------------------------------------------------------------------- */
+/* Header */
+/* ------------------------------------------------------------------------------------- */
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Input Fields */
+/* ------------------------------------------------------------------------------------- */
+
+#input-fields {
+  height: 100%;
+  padding: 1rem;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bg-color);
+}
+
+#input-fields > * {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--input-field-card-bg-color);
+  color: var(--input-field-fg-color);
+  border-radius: 10px;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Resume */
+/* ------------------------------------------------------------------------------------- */
+
+#resume-container {
+  background-color: var(--bg-color);
+  border: solid 1px green;
+  padding: 1rem;
+}
+
+#resume {
+  height: 100%;
+  padding: 1rem;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white
+}

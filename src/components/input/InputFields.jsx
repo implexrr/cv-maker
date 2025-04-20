@@ -1,7 +1,7 @@
 import ResetInputs from "./ResetInputs"
 import PersonalDetailsInput from "./PersonalDetailsInput"
 import EducationInput from "./EducationInput"
-import Experience from "../resume/Experience"
+import Experience from "./ExperienceInput"
 
 
 const InputFields = () => {

@@ -1,6 +1,8 @@
 const PersonalDetailsInput = () => {
   return (
-    <div>PersonalDetailsInput</div>
+    <div>PersonalDetailsInput
+      
+    </div>
   )
 }
 
