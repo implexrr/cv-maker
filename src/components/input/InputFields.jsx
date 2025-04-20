@@ -6,11 +6,13 @@ import Experience from "../resume/Experience"
 
 const InputFields = () => {
   return (
-    <div id="input-fields">
-      <ResetInputs></ResetInputs>
-      <PersonalDetailsInput></PersonalDetailsInput>
-      <EducationInput></EducationInput>
-      <Experience></Experience>
+    <div id="input-fields-container">
+      <div id="input-fields">
+        <ResetInputs></ResetInputs>
+        <PersonalDetailsInput></PersonalDetailsInput>
+        <EducationInput></EducationInput>
+        <Experience></Experience>
+      </div>
     </div>
   )
 }

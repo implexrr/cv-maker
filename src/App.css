@@ -20,10 +20,10 @@ h1 {
   grid-area: header;
 }
 
-#input-fields {
+#input-fields-container {
   grid-area: input-fields
 }
 
-#resume {
+#resume-container {
   grid-area: resume
 }
