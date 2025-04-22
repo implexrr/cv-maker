@@ -4,7 +4,7 @@ const PersonalDetailsInput = () => {
       <div className="formLabel">
         <div className="formLabel icon"></div>
         <div className="formLabel title">Personal Details</div>
-        <div className="showMore icon"></div>
+        <button type="button" className="showMore icon"></button>
       </div>
 
       <div id="fullNameInput">
