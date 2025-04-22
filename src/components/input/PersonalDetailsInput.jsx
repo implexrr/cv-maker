@@ -1,7 +1,8 @@
-import sampleData from "../../data/sampleCV.json";
+import sampleCV from "../../data/sampleCV.json";
 
 const PersonalDetailsInput = () => {
-  const { fullName, address, phone, email } = sampleData.personalDetails;
+  const { fullName, address, phone, email } = sampleCV.personalDetails;
+  console.log(phone)
   return (
     <form id="personalDetails">
       <div className="formLabel">

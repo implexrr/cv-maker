@@ -1,10 +1,11 @@
 :root {
-  --bg-color: oklch(96.8% 0.007 247.896);
+  --bg-color: #f1f5f9
   --fg-color: #040409;
 
   --input-field-card-bg-color: #ffffff;
 
-  --input-field-bg-color: oklch(96.8% 0.007 247.896);
+  --input-field-bg-color: #f1f5f9;
+  --input-field-bg-hover-color: #f1f5f9d4;
   --input-field-fg-color: #040409;
   --input-field-default-color: #404040;
 
