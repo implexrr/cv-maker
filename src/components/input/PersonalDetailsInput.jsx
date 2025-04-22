@@ -1,4 +1,7 @@
+import sampleData from "../../data/sampleCV.json";
+
 const PersonalDetailsInput = () => {
+  const { fullName, address, phone, email } = sampleData.personalDetails;
   return (
     <form id="personalDetails">
       <div className="formLabel">
@@ -13,7 +16,8 @@ const PersonalDetailsInput = () => {
           type="text"
           id="fullName"
           name="fullName"
-          placeholder="TDL"
+          placeholder="Bob McJobhunter"
+          defaultValue={fullName}
           required
         />
       </div>
@@ -24,14 +28,22 @@ const PersonalDetailsInput = () => {
           type="text"
           id="address"
           name="address"
-          placeholder="TDL"
+          placeholder="123 Maplevood Rd, ON, Canada"
+          defaultValue={address}
           required
         />
       </div>
 
       <div id="phoneInput" className="personalInput">
         <label htmlFor="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="TDL" required />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="647-967-1111"
+          defaultValue={phone}
+          required
+        />
       </div>
 
       <div id="emailInput" className="personalInput">
@@ -39,8 +51,9 @@ const PersonalDetailsInput = () => {
         <input
           type="email"
           id="email"
-          placeholder="TDL"
+          placeholder="pleasehireme42@gmail.com"
           name="email"
+          defaultValue={email}
           required
         />
       </div>
