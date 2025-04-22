@@ -110,6 +110,23 @@ h1 {
 /* Personal Details */
 /* ------------------------------------------------------------------------------------- */
 
+#personalDetails {
+  padding: 1rem;
+}
+
+#personalDetails > * {
+  margin-bottom: 0.5rem;
+}
+
+.personalInput > label {
+  margin-bottom: 0.3rem;
+  font-weight: 600
+}
+
+.personalInput > input {
+  padding: 0.3rem;
+}
+
 #personalDetails .formLabel.icon  {
   width: 2rem;
   height: 2rem;
@@ -119,10 +136,28 @@ h1 {
   background-position: center;
 }
 
+.personalInput {
+  display: flex;
+  flex-direction: column;
+}
+
 
 /* ------------------------------------------------------------------------------------- */
 /* Misc */
 /* ------------------------------------------------------------------------------------- */
+
+.formLabel {
+  font: 4rem;
+  font-weight: 800;
+}
+
+input {
+  all: unset;
+  border-radius: 5px;
+
+  background-color: var(--bg-color);
+}
+
 
 button {
   display: flex;

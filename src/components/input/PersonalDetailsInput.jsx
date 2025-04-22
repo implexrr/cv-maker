@@ -7,7 +7,7 @@ const PersonalDetailsInput = () => {
         <button type="button" className="showMore icon"></button>
       </div>
 
-      <div id="fullNameInput">
+      <div id="fullNameInput" className="personalInput">
         <label htmlFor="fullName">Full Name</label>
         <input
           type="text"
@@ -18,7 +18,7 @@ const PersonalDetailsInput = () => {
         />
       </div>
 
-      <div id="addressInput">
+      <div id="addressInput" className="personalInput">
         <label htmlFor="address">Address</label>
         <input
           type="text"
@@ -29,12 +29,12 @@ const PersonalDetailsInput = () => {
         />
       </div>
 
-      <div id="phoneInput">
+      <div id="phoneInput" className="personalInput">
         <label htmlFor="phone">Phone Number</label>
         <input type="tel" id="phone" name="phone" placeholder="TDL" required />
       </div>
 
-      <div id="emailPinput">
+      <div id="emailInput" className="personalInput">
         <label htmlFor="email">Email</label>
         <input
           type="email"
