@@ -5,17 +5,17 @@ const Education = ({educationData}) => {
     <div id="educationPreview">
       <h2 className="education title">Education</h2>
       <div className="education details container">
-        {educationData.map((eduItem) => {
-          const key = slugify(`${eduItem.institution}-${eduItem.degree}-${eduItem.startDate}-${eduItem.endDate}`);
+        {educationData.map((educationItem) => {
+          const key = slugify(`${educationItem.institution}-${educationItem.degree}-${educationItem.startDate}-${educationItem.endDate}`);
           return (
             <div key={key} className="educationItem">
               <div className="top">
-                <h3 className="institution">{eduItem.institution}</h3>
-                <div className="location">{eduItem.location}</div>
+                <h3 className="institution">{educationItem.institution}</h3>
+                <div className="location">{educationItem.location}</div>
               </div>
               <div className="bottom">
-                <div className="degree">{eduItem.degree}</div>
-                <div className="date">{eduItem.startDate} - {eduItem.endDate}</div>
+                <div className="degree">{educationItem.degree}</div>
+                <div className="date">{educationItem.startDate} - {educationItem.endDate}</div>
               </div>
             </div>
           );
