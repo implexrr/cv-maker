@@ -1,8 +1,8 @@
 const PersonalDetails = ({personalDetailsData}) => {
   return (
-    <div className="resumeHeader preview container">
+    <div id="personalDetailsPreview">
       <h2 className="personalDetails title">{personalDetailsData.fullName}</h2>
-      <div className="personalDetails container">
+      <div className="personalDetails details container">
         <div className="email">
           {personalDetailsData.email}
         </div>

@@ -5,23 +5,23 @@
     "phone": "473 220 085",
     "email": "e.galois1811@gmail.com"
   },
-  "Education": [
+  "education": [
     {
       "institution": "Lycée Louis-le-Grand",
       "degree": "High School",
       "startDate": "1823",
       "endDate": "1828",
-      "Location": "123 Rue Saint-Jacques, 75005 Paris, France"
+      "location": "123 Rue Saint-Jacques, 75005 Paris, France"
     },
     {
       "institution": "l'École préparatoire",
       "degree": "Mathematics",
       "startDate": "1829",
       "endDate": "Present",
-      "Location": "45 Rue d'Ulm, 75005 Paris, France"
+      "location": "45 Rue d'Ulm, 75005 Paris, France"
     }
   ],
-  "Experience": [
+  "experience": [
     {
       "companyName": "Guarde Nationale",
       "title": "Artilleryman",

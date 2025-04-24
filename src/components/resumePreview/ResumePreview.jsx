@@ -7,7 +7,7 @@ const ResumePreview = ({resumeData}) => {
     <div id="resumePreviewContainer">
       <div id="resumePreview">
         <PersonalDetails personalDetailsData={resumeData.personalDetails}></PersonalDetails>
-        <Education></Education>
+        <Education educationData={resumeData.education}></Education>
         <Experience></Experience>
       </div>
     </div>
