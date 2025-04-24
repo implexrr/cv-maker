@@ -1,6 +1,6 @@
 const EducationInput = () => {
   return (
-    <div>EducationInput</div>
+    <div>Education</div>
   )
 }
 

@@ -22,7 +22,7 @@ h1 {
 #resumeFormContainer {
   grid-area: resumeForm;
 }
-#resumeContainer {
+#resumePreviewContainer {
   grid-area: resume
 }
 
@@ -69,7 +69,7 @@ h1 {
 /* Resume */
 /* ------------------------------------------------------------------------------------- */
 
-#resumeContainer {
+#resumePreviewContainer {
   background-color: var(--bg-color);
   border: solid 1px green;
   padding: 1rem;
@@ -110,28 +110,28 @@ h1 {
 /* Personal Details */
 /* ------------------------------------------------------------------------------------- */
 
-#personalDetails {
+form.personalDetails {
   padding: 1rem;
 }
 
-#personalDetails > * {
+form.personalDetails > * {
   margin-bottom: 0.5rem;
 }
 
-.personalInput > label {
+.personalDetails.inputContainer > label {
   margin-bottom: 0.3rem;
   font-weight: 600
 }
 
-.personalInput > input {
+.personalDetails.inputContainer > input {
   padding: 0.5rem;
 }
 
-.personalInput > input:hover {
+.personalDetails.inputContainer > input:hover {
   background-color: var(--input-field-bg-hover-color)
 }
 
-#personalDetails .formLabel.icon  {
+form.personalDetails .formLabel.icon  {
   width: 2rem;
   height: 2rem;
   background-image: url('../assets/personal.svg');
@@ -140,7 +140,7 @@ h1 {
   background-position: center;
 }
 
-.personalInput {
+.personalDetails.inputContainer {
   display: flex;
   flex-direction: column;
 }

@@ -1,20 +1,19 @@
 const Header = ({personalDetails}) => {
   return (
-    <div id="resumeHeaderContainer">
-      <h2>{personalDetails.fullName}</h2>
+    <div className="resumeHeader preview container">
+      <h2 className="personalDetails title">{personalDetails.fullName}</h2>
       <div className="personalDetails container">
-        <div className="personalDetails email resume">
+        <div className="email">
           {personalDetails.email}
         </div>
-        <div className="personalDetails phone resume">
+        <div className="phone">
           {personalDetails.phone}
         </div>
-        <div className="personalDetails address resume">
+        <div className="address">
           {personalDetails.address}
         </div>
       </div>
     </div>
-
   )
 }
 

@@ -1,32 +1,34 @@
 import { useState } from "react";
 
 const PersonalDetailsInput = ({ personalDetails, setPersonalDetails }) => {
-
-  const [isExpanded, setIsExpanded] = useState(true)
+  const [isExpanded, setIsExpanded] = useState(true);
 
   const handleToggle = () => {
-    setIsExpanded(expanded => !expanded)
-  }
+    setIsExpanded((expanded) => !expanded);
+  };
 
   function handleChange(e) {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setPersonalDetails({
       ...personalDetails,
-      [name]: value
-    })
+      [name]: value,
+    });
   }
 
   return (
-    <form id="personalDetails">
+    <form className="personalDetails">
       <div className="formLabel">
         <div className="formLabel icon"></div>
         <div className="formLabel title">Personal Details</div>
-        <button type="button" className={isExpanded ? "showLess icon" : "showMore icon"} onClick={handleToggle}></button>
+        <button
+          type="button"
+          className={isExpanded ? "showLess icon" : "showMore icon"}
+          onClick={handleToggle}
+        ></button>
       </div>
-      {
-        isExpanded && (
-          <>
-          <div id="fullNameInput" className="personalInput">
+      {isExpanded && (
+        <>
+          <div id="fullNameInput" className="personalDetails inputContainer">
             <label htmlFor="fullName">Full Name</label>
             <input
               type="text"
@@ -39,7 +41,7 @@ const PersonalDetailsInput = ({ personalDetails, setPersonalDetails }) => {
             />
           </div>
 
-          <div id="addressInput" className="personalInput">
+          <div id="addressInput" className="personalDetails inputContainer">
             <label htmlFor="address">Address</label>
             <input
               type="text"
@@ -52,7 +54,7 @@ const PersonalDetailsInput = ({ personalDetails, setPersonalDetails }) => {
             />
           </div>
 
-          <div id="phoneInput" className="personalInput">
+          <div id="phoneInput" className="personalDetails inputContainer">
             <label htmlFor="phone">Phone Number</label>
             <input
               type="tel"
@@ -65,7 +67,7 @@ const PersonalDetailsInput = ({ personalDetails, setPersonalDetails }) => {
             />
           </div>
 
-          <div id="emailInput" className="personalInput">
+          <div id="emailInput" className="personalDetails inputContainer">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -77,10 +79,8 @@ const PersonalDetailsInput = ({ personalDetails, setPersonalDetails }) => {
               required
             />
           </div>
-          </>
-        )
-      }
-
+        </>
+      )}
     </form>
   );
 };

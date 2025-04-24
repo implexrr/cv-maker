@@ -2,10 +2,10 @@ import Header from './Header'
 import Education from './Education'
 import Experience from './Experience'
 
-const Resume = ({resumeData}) => {
+const ResumePreview = ({resumeData}) => {
   return (
-    <div id="resumeContainer">
-      <div id="resume">
+    <div id="resumePreviewContainer">
+      <div id="resumePreview">
         <Header personalDetails={resumeData.personalDetails}></Header>
         <Education></Education>
         <Experience></Experience>
@@ -14,4 +14,4 @@ const Resume = ({resumeData}) => {
   )
 }
 
-export default Resume
+export default ResumePreview
