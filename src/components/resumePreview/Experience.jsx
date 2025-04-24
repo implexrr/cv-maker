@@ -11,11 +11,11 @@ const Experience = ({experienceData}) => {
             <div key={key} className="experienceItem">
               <div className="top">
                 <h3 className="companyName">{experienceItem.companyName}</h3>
-                <div className="location">{experienceItem.location}</div>
+                <p className="location">{experienceItem.location}</p>
               </div>
               <div className="bottom">
-                <div className="title">{experienceItem.title}</div>
-                <div className="date">{experienceItem.startDate} - {experienceItem.endDate}</div>
+                <p className="title">{experienceItem.title}</p>
+                <p className="date">{experienceItem.startDate} - {experienceItem.endDate}</p>
               </div>
               <div className="description">
                 <p className="title">{experienceItem.description}</p>

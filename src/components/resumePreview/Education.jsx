@@ -11,11 +11,11 @@ const Education = ({educationData}) => {
             <div key={key} className="educationItem">
               <div className="top">
                 <h3 className="institution">{educationItem.institution}</h3>
-                <div className="location">{educationItem.location}</div>
+                <p className="location">{educationItem.location}</p>
               </div>
               <div className="bottom">
-                <div className="degree">{educationItem.degree}</div>
-                <div className="date">{educationItem.startDate} - {educationItem.endDate}</div>
+                <p className="degree">{educationItem.degree}</p>
+                <p className="date">{educationItem.startDate} - {educationItem.endDate}</p>
               </div>
             </div>
           );

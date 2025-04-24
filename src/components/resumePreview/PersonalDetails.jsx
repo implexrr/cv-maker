@@ -3,15 +3,15 @@ const PersonalDetails = ({personalDetailsData}) => {
     <div id="personalDetailsPreview">
       <h2 className="personalDetails title">{personalDetailsData.fullName}</h2>
       <div className="personalDetails details container">
-        <div className="email">
+        <p className="email">
           {personalDetailsData.email}
-        </div>
-        <div className="phone">
+        </p>
+        <p className="phone">
           {personalDetailsData.phone}
-        </div>
-        <div className="address">
+        </p>
+        <p className="address">
           {personalDetailsData.address}
-        </div>
+        </p>
       </div>
     </div>
   )
