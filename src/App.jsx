@@ -9,21 +9,38 @@ function App() {
   // Initialize state with the structure of sampleCV
   const [resumeData, setResumeData] = useState(sampleCV);
 
-  // a small helper to update only personalDetails
-  const setPersonalDetails = (newPersonalDetails) =>
+  function setPersonalDetails (newPersonalDetails) {
     setResumeData((oldResumeData) => ({
       ...oldResumeData,
       personalDetails: newPersonalDetails
-    }))
+    }));
+  }
 
+  function setEducation(newEducation) {
+    setResumeData((oldResumeData) => ({
+      ...oldResumeData,
+      education: newEducation
+    }));
+  }
+
+  function setExperience(newExperience) {
+    setResumeData((oldResumeData) => ({
+      ...oldResumeData,
+      experience: newExperience
+    }));
+  }
 
   return (
     <>
       <Header></Header>
       <ResumeForm
         personalDetails={resumeData.personalDetails}
-        setPersonalDetails={setPersonalDetails}>
-      </ResumeForm>
+        setPersonalDetails={setPersonalDetails}
+        education={resumeData.education}
+        setEducation={setEducation}
+        experience={resumeData.experience}
+        setExperience={setExperience}
+      />
       <ResumePreview resumeData={resumeData}></ResumePreview>
     </>
   )
