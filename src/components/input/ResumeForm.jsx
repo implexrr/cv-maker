@@ -4,12 +4,16 @@ import EducationInput from "./EducationInput"
 import Experience from "./ExperienceInput"
 
 
-const InputFields = () => {
+const ResumeForm = ({ personalDetails, setPersonalDetails }) => {
   return (
-    <div id="inputFieldsContainer">
-      <div id="inputFields">
+    <div id="resumeFormContainer">
+      <div id="resumeForm">
         <ResetInputs></ResetInputs>
-        <PersonalDetailsInput></PersonalDetailsInput>
+        <PersonalDetailsInput
+          personalDetails={personalDetails}
+          setPersonalDetails={setPersonalDetails}
+        >
+        </PersonalDetailsInput>
         <EducationInput></EducationInput>
         <Experience></Experience>
       </div>
@@ -17,4 +21,4 @@ const InputFields = () => {
   )
 }
 
-export default InputFields
+export default ResumeForm

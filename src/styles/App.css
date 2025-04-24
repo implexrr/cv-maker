@@ -12,15 +12,15 @@
   grid-template-rows: auto 1fr;
   grid-template-areas:
   "header header"
-  "inputFields resume";
+  "resumeForm resume";
   border: solid 3px blue;
 }
 
 h1 {
   grid-area: header;
 }
-#inputFieldsContainer {
-  grid-area: inputFields;
+#resumeFormContainer {
+  grid-area: resumeForm;
 }
 #resumeContainer {
   grid-area: resume
@@ -47,7 +47,7 @@ h1 {
 /* Input Fields */
 /* ------------------------------------------------------------------------------------- */
 
-#inputFields {
+#resumeForm {
   height: 100%;
   padding: 1rem;
   border: solid 1px black;
@@ -57,7 +57,7 @@ h1 {
   background-color: var(--bg-color);
 }
 
-#inputFields > * {
+#resumeForm > * {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
   background-color: var(--input-field-card-bg-color);

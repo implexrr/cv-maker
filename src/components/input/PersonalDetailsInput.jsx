@@ -1,8 +1,11 @@
-import sampleCV from "../../data/sampleCV.json";
-
-const PersonalDetailsInput = () => {
-  const { fullName, address, phone, email } = sampleCV.personalDetails;
-  console.log(phone)
+const PersonalDetailsInput = ({ personalDetails, setPersonalDetails }) => {
+  const handleChange = e => {
+    const { name, value } = e.target
+    setPersonalDetails({
+      ...personalDetails,
+      [name]: value
+    })
+  }
   return (
     <form id="personalDetails">
       <div className="formLabel">
@@ -18,7 +21,8 @@ const PersonalDetailsInput = () => {
           id="fullName"
           name="fullName"
           placeholder="Bob McJobhunter"
-          defaultValue={fullName}
+          defaultValue={personalDetails.fullName}
+          onChange={handleChange}
           required
         />
       </div>
@@ -30,7 +34,8 @@ const PersonalDetailsInput = () => {
           id="address"
           name="address"
           placeholder="123 Maplevood Rd, ON, Canada"
-          defaultValue={address}
+          defaultValue={personalDetails.address}
+          onChange={handleChange}
           required
         />
       </div>
@@ -42,7 +47,8 @@ const PersonalDetailsInput = () => {
           id="phone"
           name="phone"
           placeholder="647-967-1111"
-          defaultValue={phone}
+          defaultValue={personalDetails.phone}
+          onChange={handleChange}
           required
         />
       </div>
@@ -54,7 +60,8 @@ const PersonalDetailsInput = () => {
           id="email"
           placeholder="pleasehireme42@gmail.com"
           name="email"
-          defaultValue={email}
+          defaultValue={personalDetails.email}
+          onChange={handleChange}
           required
         />
       </div>
