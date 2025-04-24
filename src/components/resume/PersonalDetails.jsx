@@ -1,20 +1,20 @@
-const Header = ({personalDetails}) => {
+const PersonalDetails = ({personalDetailsData}) => {
   return (
     <div className="resumeHeader preview container">
-      <h2 className="personalDetails title">{personalDetails.fullName}</h2>
+      <h2 className="personalDetails title">{personalDetailsData.fullName}</h2>
       <div className="personalDetails container">
         <div className="email">
-          {personalDetails.email}
+          {personalDetailsData.email}
         </div>
         <div className="phone">
-          {personalDetails.phone}
+          {personalDetailsData.phone}
         </div>
         <div className="address">
-          {personalDetails.address}
+          {personalDetailsData.address}
         </div>
       </div>
     </div>
   )
 }
 
-export default Header
+export default PersonalDetails
