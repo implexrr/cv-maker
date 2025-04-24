@@ -1,6 +1,6 @@
-const ClearResumeButton = () => {
+const CancelSubmissionButton = () => {
   return (
-    <button className="clearResume">
+    <button type="button" className="cancelSubmission">
     <svg
       viewBox="0 0 48 48"
       width="36"
@@ -31,9 +31,9 @@ const ClearResumeButton = () => {
       <line x1="24" y1="20" x2="24" y2="38" stroke="#fff" strokeWidth="2" />
       <line x1="30" y1="20" x2="30" y2="38" stroke="#fff" strokeWidth="2" />
     </svg>
-    <span>Clear Resume</span>
+    <span>Cancel</span>
   </button>
   )
 }
 
-export default ClearResumeButton
+export default CancelSubmissionButton

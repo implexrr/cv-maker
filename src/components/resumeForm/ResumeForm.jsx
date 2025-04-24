@@ -1,10 +1,11 @@
 import ResetInputs from "./ResetInputs"
 import PersonalDetailsInput from "./PersonalDetailsInput"
 import EducationInput from "./EducationInput"
-import ExperienceIInput from "./ExperienceInput"
+import ExperienceInput from "./ExperienceInput"
 
 
 const ResumeForm = ({ personalDetails, setPersonalDetails, education, setEducation, experience, setExperience }) => {
+  console.log(education);
   return (
     <div id="resumeFormContainer">
       <div id="resumeForm">

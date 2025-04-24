@@ -3,7 +3,7 @@ import LoadExampleButton from "./buttons/LoadExampleButton";
 
 const ResetInputs = () => {
   return (
-    <div id="resetInputs">
+    <div className="buttonPair" id="resetInputs">
       <ClearResumeButton></ClearResumeButton>
       <LoadExampleButton></LoadExampleButton>
     </div>

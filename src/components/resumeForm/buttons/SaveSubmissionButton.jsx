@@ -1,6 +1,6 @@
-const LoadExampleButton = () => {
+const SaveSubmissionButton = () => {
   return (
-    <button className="loadExample">
+    <button type="button" className="saveSubmission">
     <svg
       className="icon"
       viewBox="0 0 48 48"
@@ -30,9 +30,9 @@ const LoadExampleButton = () => {
         strokeLinejoin="round"
       />
     </svg>
-    <span>Load Example</span>
+    <span>Save</span>
   </button>
   )
 }
 
-export default LoadExampleButton
+export default SaveSubmissionButton
