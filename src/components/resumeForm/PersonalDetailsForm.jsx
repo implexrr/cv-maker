@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const PersonalDetailsInput = ({ personalDetails, setPersonalDetails }) => {
+const PersonalDetailsForm = ({ personalDetails, setPersonalDetails }) => {
   const [isExpanded, setIsExpanded] = useState(true);
 
   const handleToggle = () => {
@@ -85,4 +85,4 @@ const PersonalDetailsInput = ({ personalDetails, setPersonalDetails }) => {
   );
 };
 
-export default PersonalDetailsInput;
+export default PersonalDetailsForm;

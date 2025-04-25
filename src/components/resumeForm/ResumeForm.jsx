@@ -1,23 +1,23 @@
-import ResetInputs from "./ResetInputs"
-import PersonalDetailsInput from "./PersonalDetailsInput"
-import EducationInput from "./EducationInput"
-import ExperienceInput from "./ExperienceInput"
+import ResetForms from "./ResetForms"
+import PersonalDetailsForm from "./PersonalDetailsForm"
+import EducationForm from "./EducationForm"
+import ExperienceForm from "./ExperienceForm"
 
 
 const ResumeForm = ({ personalDetails, setPersonalDetails, education, setEducation, experience, setExperience }) => {
   return (
     <div id="resumeFormContainer">
       <div id="resumeForm">
-        <ResetInputs></ResetInputs>
-        <PersonalDetailsInput
+        <ResetForms></ResetForms>
+        <PersonalDetailsForm
           personalDetails={personalDetails}
           setPersonalDetails={setPersonalDetails}
         />
-        <EducationInput
+        <EducationForm
           education={education}
           setEducation={setEducation}
         />
-        <ExperienceInput
+        <ExperienceForm
           experience={experience}
           setExperience={setExperience}     
         />

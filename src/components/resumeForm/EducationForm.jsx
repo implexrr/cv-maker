@@ -3,7 +3,7 @@ import slugify from "../../utils/slugify";
 import SaveSubmissionButton from "./buttons/SaveSubmissionButton";
 import CancelSubmissionButton from "./buttons/CancelSubmissionButton";
 
-const EducationInput = ({ education, setEducation }) => {
+const EducationForm = ({ education, setEducation }) => {
   const [isAddingCredential, setIsAddingCredential] = useState(false);
 
   const emptyForm = {
@@ -12,15 +12,14 @@ const EducationInput = ({ education, setEducation }) => {
     degree: "",
     startDate: "",
     endDate: "",
-    location: ""
-  }
+    location: "",
+  };
 
   const [formData, setFormData] = useState(emptyForm);
 
   const toggleCredentialForm = () => {
     setIsAddingCredential((isAddingCredential) => !isAddingCredential);
   };
-  
 
   const deleteCredential = (idToDelete) => {
     const newEducation = education.filter((item) => item.id !== idToDelete);
@@ -28,12 +27,14 @@ const EducationInput = ({ education, setEducation }) => {
   };
 
   const saveSubmission = () => {
-    const slug = slugify(`${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`);
+    const slug = slugify(
+      `${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`,
+    );
     const newItem = { ...formData, id: slug };
     setEducation([...education, newItem]);
     setFormData(emptyForm);
     toggleCredentialForm();
-  }
+  };
 
   const toggleCredentialVisibility = (idToToggle) => {
     const newEducation = education.map((educationItem) =>
@@ -43,16 +44,13 @@ const EducationInput = ({ education, setEducation }) => {
     );
     setEducation(newEducation);
   };
-  
 
   return (
     <form className="education">
       <div
         className="formLabel"
         style={{
-          justifyContent: isAddingCredential
-          ? "center"
-          : "space-between"
+          justifyContent: isAddingCredential ? "center" : "space-between",
         }}
       >
         <div className="formLabel icon"></div>
@@ -77,7 +75,10 @@ const EducationInput = ({ education, setEducation }) => {
               placeholder="University of Superdupercool"
               required
               onChange={(e) =>
-                setFormData(oldForm => ({ ...oldForm, institution: e.target.value }))
+                setFormData((oldForm) => ({
+                  ...oldForm,
+                  institution: e.target.value,
+                }))
               }
             />
           </div>
@@ -91,7 +92,10 @@ const EducationInput = ({ education, setEducation }) => {
               placeholder="Hon. BSc Mathematics"
               required
               onChange={(e) =>
-                setFormData(oldForm => ({ ...oldForm, degree: e.target.value }))
+                setFormData((oldForm) => ({
+                  ...oldForm,
+                  degree: e.target.value,
+                }))
               }
             />
           </div>
@@ -105,7 +109,10 @@ const EducationInput = ({ education, setEducation }) => {
               placeholder="November 5, 1605"
               required
               onChange={(e) =>
-                setFormData(oldForm => ({ ...oldForm, startDate: e.target.value }))
+                setFormData((oldForm) => ({
+                  ...oldForm,
+                  startDate: e.target.value,
+                }))
               }
             />
           </div>
@@ -119,7 +126,10 @@ const EducationInput = ({ education, setEducation }) => {
               placeholder="November 6, 1605"
               required
               onChange={(e) =>
-                setFormData(oldForm => ({ ...oldForm, endDate: e.target.value }))
+                setFormData((oldForm) => ({
+                  ...oldForm,
+                  endDate: e.target.value,
+                }))
               }
             />
           </div>
@@ -133,13 +143,18 @@ const EducationInput = ({ education, setEducation }) => {
               placeholder="123 Foobar Rd, Barfoo, Canada"
               required
               onChange={(e) =>
-                setFormData(oldForm => ({ ...oldForm, location: e.target.value }))
+                setFormData((oldForm) => ({
+                  ...oldForm,
+                  location: e.target.value,
+                }))
               }
             />
           </div>
           <div id="submitEducation" className="buttonPair">
-            <SaveSubmissionButton saveSubmission={saveSubmission}/>
-            <CancelSubmissionButton toggleCredentialForm={toggleCredentialForm}/>
+            <SaveSubmissionButton saveSubmission={saveSubmission} />
+            <CancelSubmissionButton
+              toggleCredentialForm={toggleCredentialForm}
+            />
           </div>
         </>
       )}
@@ -182,4 +197,4 @@ const EducationInput = ({ education, setEducation }) => {
   );
 };
 
-export default EducationInput;
+export default EducationForm;
