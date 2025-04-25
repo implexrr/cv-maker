@@ -80,7 +80,11 @@ const EducationInput = ({ education, setEducation }) => {
               return (
                 <div key={key} className="educationItem">
                   <p className="educationItem">{educationItem.institution}</p>
-                  <button type="button" className="showCredential icon"></button>
+                  <div className="buttonsContainer">
+                    <button type="button" className="editCredential icon"></button>
+                    <button type="button" className="showCredential icon"></button>
+                    <button type="button" className="deleteCredential icon"></button>
+                  </div>
                 </div>
               );
             })

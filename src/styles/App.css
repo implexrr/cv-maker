@@ -115,50 +115,11 @@ h1 {
 
 
 
-form.personalDetails .formLabel.icon  {
-  background-image: url('../assets/personal.svg');
-}
-
-.showMore.icon, .showLess.icon {
-  all: unset;
-  width: 2rem;
-  height: 2rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.showMore.icon {
-  background-image: url('../assets/showMore.svg');
-}
-.showLess.icon {
-  background-image: url('../assets/showLess.svg');
-}
-.showMore.icon:hover, .showLess.icon:hover {
-  cursor: pointer;
-  opacity: 0.5;
-}
-
 /* ------------------------------------------------------------------------------------- */
 /* Education */
 /* ------------------------------------------------------------------------------------- */
 
-form.education .formLabel.icon {
-  background-image: url('../assets/education.svg');
-}
 
-.addCredential.icon {
-  all: unset;
-  width: 2rem;
-  height: 2rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url('../assets/plus.svg');
-}
-.addCredential.icon:hover {
-  cursor: pointer;
-  opacity: 0.5;
-}
 
 .educationItem {
   justify-content: space-between;
@@ -251,39 +212,53 @@ form > * {
   margin-right: 0.2rem
 }
 
-.formLabel.icon {
-  width: 2rem;
-  height: 2rem;
-  background-size: contain; /* or cover, or 100% 100% */
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .cancelSubmission {
   color: var(--clear-resume-fg-color);
 }
 
-.showCredential {
+/* ------------------------------------------------------------------------------------- */
+/* Icons */
+/* ------------------------------------------------------------------------------------- */
+.icon {
   all: unset;
   width: 2rem;
   height: 2rem;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('../assets/showCredential.svg');
+}
+.icon:hover:not(.formLabel) {
+  cursor: pointer;
+  opacity: 0.5
 }
 
+.showCredential {
+  background-image: url('../assets/showCredential.svg');
+}
 .hideCredential {
-  all: unset;
-  width: 2rem;
-  height: 2rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   background-image: url('../assets/hideCredential.svg');
 }
 
-.showCredential:hover, .hideCredential:hover {
-  cursor: pointer;
-  opacity: 0.5;
+.editCredential {
+  background-image: url('../assets/editCredential.svg');
+}
+
+.deleteCredential {
+  background-image: url('../assets/deleteCredential.svg');
+}
+form.personalDetails .formLabel.icon  {
+  background-image: url('../assets/personal.svg');
+}
+
+.showMore.icon {
+  background-image: url('../assets/showMore.svg');
+}
+.showLess.icon {
+  background-image: url('../assets/showLess.svg');
+}
+form.education .formLabel.icon {
+  background-image: url('../assets/education.svg');
+}
+.addCredential {
+  background-image: url('../assets/plus.svg');
 }
