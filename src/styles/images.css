@@ -1,0 +1,34 @@
+form.experience .formLabel.icon {
+  background-image: url('../assets/experience.svg');
+}
+
+.showCredential {
+  background-image: url('../assets/showCredential.svg');
+}
+.hideCredential {
+  background-image: url('../assets/hideCredential.svg');
+}
+
+.editCredential {
+  background-image: url('../assets/editCredential.svg');
+}
+
+.deleteCredential {
+  background-image: url('../assets/deleteCredential.svg');
+}
+form.personalDetails .formLabel.icon  {
+  background-image: url('../assets/personal.svg');
+}
+
+.showMore.icon {
+  background-image: url('../assets/showMore.svg');
+}
+.showLess.icon {
+  background-image: url('../assets/showLess.svg');
+}
+form.education .formLabel.icon {
+  background-image: url('../assets/education.svg');
+}
+.addCredential {
+  background-image: url('../assets/plus.svg');
+}

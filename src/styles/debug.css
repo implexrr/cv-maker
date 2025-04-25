@@ -1,0 +1,20 @@
+#root {
+  border: solid 3px blue;
+}
+
+#root > * {
+  border: solid 1px red;
+}
+
+#resumeForm {
+  border: solid 1px black;
+}
+
+#resumePreviewContainer {
+  border: solid 1px green;
+  padding: 1rem;
+}
+
+#resumePreview {
+  border: solid 1px black;
+}

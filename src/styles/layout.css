@@ -1,0 +1,163 @@
+/* ------------------------------------------------------------------------------------- */
+/* Root */
+/* ------------------------------------------------------------------------------------- */
+
+#root {
+  height: auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(min-content, 3fr) minmax(min-content, 7fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+  "header header"
+  "resumeForm resume";
+}
+
+h1 {
+  grid-area: header;
+}
+#resumeFormContainer {
+  grid-area: resumeForm;
+}
+#resumePreviewContainer {
+  grid-area: resume
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Header */
+/* ------------------------------------------------------------------------------------- */
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Resume Form */
+/* ------------------------------------------------------------------------------------- */
+
+#resumeForm {
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bg-color);
+}
+
+#resumeForm > * {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--input-field-card-bg-color);
+  color: var(--input-field-fg-color);
+  border-radius: 10px;
+}
+
+
+/* ------------------------------------------------------------------------------------- */
+/* Resume Preview */
+/* ------------------------------------------------------------------------------------- */
+
+#resumePreviewContainer {
+  padding: 1rem;
+}
+
+#resumePreview {
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Reset Inputs */
+/* ------------------------------------------------------------------------------------- */
+
+.buttonPair {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clearResume {
+  margin-right: 0.2rem;
+}
+
+.loadExample {
+  margin-left: 0.2rem;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Education */
+/* ------------------------------------------------------------------------------------- */
+
+.educationItem {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Forms */
+/* ------------------------------------------------------------------------------------- */
+
+form {
+  padding: 1rem;
+}
+
+form > * {
+  margin-bottom: 0.5rem;
+}
+
+.formLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formLabel > * {
+  margin-right: 0.2rem
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Inputs */
+/* ------------------------------------------------------------------------------------- */
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer > label {
+  margin-bottom: 0.3rem;
+}
+
+.inputContainer > input {
+  padding: 0.5rem;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Buttons */
+/* ------------------------------------------------------------------------------------- */
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Icons */
+/* ------------------------------------------------------------------------------------- */
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
