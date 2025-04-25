@@ -7,7 +7,7 @@ const PersonalDetailsInput = ({ personalDetails, setPersonalDetails }) => {
     setIsExpanded((expanded) => !expanded);
   };
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setPersonalDetails({
       ...personalDetails,

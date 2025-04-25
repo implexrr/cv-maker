@@ -9,26 +9,14 @@ function App() {
   // Initialize state with the structure of sampleCV
   const [resumeData, setResumeData] = useState(sampleCV);
 
-  function setPersonalDetails (newPersonalDetails) {
-    setResumeData((oldResumeData) => ({
-      ...oldResumeData,
-      personalDetails: newPersonalDetails
-    }));
-  }
+  const setPersonalDetails = (personalDetails) =>
+    setResumeData((resumeData) => ({ ...resumeData, personalDetails }));
 
-  function setEducation(newEducation) {
-    setResumeData((oldResumeData) => ({
-      ...oldResumeData,
-      education: newEducation
-    }));
-  }
+  const setEducation = (education) =>
+    setResumeData((resumeData) => ({ ...resumeData, education }));
 
-  function setExperience(newExperience) {
-    setResumeData((oldResumeData) => ({
-      ...oldResumeData,
-      experience: newExperience
-    }));
-  }
+  const setExperience = (experience) =>
+    setResumeData((resumeData) => ({ ...resumeData, experience }));
 
   return (
     <>

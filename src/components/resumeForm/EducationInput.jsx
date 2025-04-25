@@ -5,7 +5,7 @@ import CancelSubmissionButton from "./buttons/CancelSubmissionButton";
 
 const EducationInput = ({ education, setEducation }) => {
 
-  function handleDeleteCredential(idToDelete) {
+  const handleDeleteCredential = (idToDelete) => {
     const newEducation = education.filter(item => item.id !== idToDelete);
     setEducation(newEducation);
   }
