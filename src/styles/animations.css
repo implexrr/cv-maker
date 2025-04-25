@@ -26,6 +26,10 @@ button:active {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
+button.clearResume:hover, button.cancelSubmission:hover {
+  background-color: #ff825cd5;
+  color: #f1f5f9;
+}
 
 /* ------------------------------------------------------------------------------------- */
 /* Icons */
@@ -33,5 +37,7 @@ button:active {
 
 .icon:hover:not(.formLabel) {
   cursor: pointer;
-  opacity: 0.5
+  opacity: 0.5;
+  border-radius: 20px;
+  background-color: var(--icon-bg-bcolor);
 }

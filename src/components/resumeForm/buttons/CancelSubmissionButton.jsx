@@ -6,7 +6,6 @@ const CancelSubmissionButton = () => {
       width="36"
       height="36"
       xmlns="http://www.w3.org/2000/svg"
-      className="trash-icon"
     >
       {/* Trash Can Body */}
       <rect

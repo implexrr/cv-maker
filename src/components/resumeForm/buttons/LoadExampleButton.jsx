@@ -2,7 +2,6 @@ const LoadExampleButton = () => {
   return (
     <button className="loadExample">
     <svg
-      className="icon"
       viewBox="0 0 48 48"
       width="36"
       height="36"
