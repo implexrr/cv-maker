@@ -9,23 +9,14 @@ const EducationInput = ({ education, setEducation }) => {
     setEducation(newEducation);
   };
 
-  const handleHideCredential = (idToHide) => {
+  const toggleCredentialVisibility= (idToToggle) => {
     const newEducation = education.map((educationItem) =>
-      educationItem.id === idToHide
-        ? { ...educationItem, hidden: true }
+      educationItem.id === idToToggle
+        ? { ...educationItem, hidden: !educationItem.hidden }
         : educationItem,
     );
     setEducation(newEducation);
-  };
-
-  const handleShowCredential = (idToShow) => {
-    const newEducation = education.map((educationItem) =>
-      educationItem.id === idToShow
-        ? { ...educationItem, hidden: false }
-        : educationItem,
-    );
-    setEducation(newEducation);
-  };
+  }
 
   return (
     <form className="education">
@@ -113,9 +104,7 @@ const EducationInput = ({ education, setEducation }) => {
                       : "showCredential icon"
                   }
                   onClick={() => {
-                    educationItem.hidden
-                      ? handleShowCredential(educationItem.id)
-                      : handleHideCredential(educationItem.id);
+                    toggleCredentialVisibility(educationItem.id);
                   }}
                 ></button>
                 <button
