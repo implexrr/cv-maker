@@ -262,3 +262,11 @@ form.education .formLabel.icon {
 .addCredential {
   background-image: url('../assets/plus.svg');
 }
+
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: flex;
+}

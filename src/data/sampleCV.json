@@ -12,7 +12,8 @@
       "degree": "High School",
       "startDate": "1823",
       "endDate": "1828",
-      "location": "123 Rue Saint-Jacques, 75005 Paris, France"
+      "location": "123 Rue Saint-Jacques, 75005 Paris, France",
+      "hidden": false
     },
     {
       "id": "lcoleprparatoiremathematics1829present",
@@ -20,7 +21,8 @@
       "degree": "Mathematics",
       "startDate": "1829",
       "endDate": "Present",
-      "location": "45 Rue d'Ulm, 75005 Paris, France"
+      "location": "45 Rue d'Ulm, 75005 Paris, France",
+      "hidden": false
     }
   ],
   "experience": [
@@ -30,7 +32,8 @@
       "startDate": "1830",
       "endDate": "Present",
       "location": "144 Rue du Faubourg Saint-Martin, 75010 Paris, France",
-      "description": "J'ai rêvé de tirer beaucoup de boulets de canon, mais je n'ai jamais vraiment fait grand-chose."
+      "description": "J'ai rêvé de tirer beaucoup de boulets de canon, mais je n'ai jamais vraiment fait grand-chose.",
+      "hidden": false
     }
   ]
 }
