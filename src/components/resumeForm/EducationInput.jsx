@@ -6,10 +6,34 @@ import CancelSubmissionButton from "./buttons/CancelSubmissionButton";
 const EducationInput = ({ education, setEducation }) => {
   const [isAddingCredential, setIsAddingCredential] = useState(false);
 
-  const handleDeleteCredential = (idToDelete) => {
+  const emptyForm = {
+    id: "",
+    institution: "",
+    degree: "",
+    startDate: "",
+    endDate: "",
+    location: ""
+  }
+
+  const [formData, setFormData] = useState(emptyForm);
+
+  const toggleCredentialForm = () => {
+    setIsAddingCredential((isAddingCredential) => !isAddingCredential);
+  };
+  
+
+  const deleteCredential = (idToDelete) => {
     const newEducation = education.filter((item) => item.id !== idToDelete);
     setEducation(newEducation);
   };
+
+  const saveSubmission = () => {
+    const slug = slugify(`${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`);
+    const newItem = { ...formData, id: slug };
+    setEducation([...education, newItem]);
+    setFormData(emptyForm);
+    toggleCredentialForm();
+  }
 
   const toggleCredentialVisibility = (idToToggle) => {
     const newEducation = education.map((educationItem) =>
@@ -19,12 +43,7 @@ const EducationInput = ({ education, setEducation }) => {
     );
     setEducation(newEducation);
   };
-
-  const toggleCredentialForm = () => {
-    setIsAddingCredential((isAddingCredential) => !isAddingCredential);
-  };
-
-
+  
 
   return (
     <form className="education">
@@ -57,6 +76,9 @@ const EducationInput = ({ education, setEducation }) => {
               name="institution"
               placeholder="University of Superdupercool"
               required
+              onChange={(e) =>
+                setFormData(oldForm => ({ ...oldForm, institution: e.target.value }))
+              }
             />
           </div>
 
@@ -68,6 +90,9 @@ const EducationInput = ({ education, setEducation }) => {
               name="degree"
               placeholder="Hon. BSc Mathematics"
               required
+              onChange={(e) =>
+                setFormData(oldForm => ({ ...oldForm, degree: e.target.value }))
+              }
             />
           </div>
 
@@ -79,6 +104,9 @@ const EducationInput = ({ education, setEducation }) => {
               name="startDate"
               placeholder="November 5, 1605"
               required
+              onChange={(e) =>
+                setFormData(oldForm => ({ ...oldForm, startDate: e.target.value }))
+              }
             />
           </div>
 
@@ -90,6 +118,9 @@ const EducationInput = ({ education, setEducation }) => {
               name="endDate"
               placeholder="November 6, 1605"
               required
+              onChange={(e) =>
+                setFormData(oldForm => ({ ...oldForm, endDate: e.target.value }))
+              }
             />
           </div>
 
@@ -101,10 +132,13 @@ const EducationInput = ({ education, setEducation }) => {
               name="location"
               placeholder="123 Foobar Rd, Barfoo, Canada"
               required
+              onChange={(e) =>
+                setFormData(oldForm => ({ ...oldForm, location: e.target.value }))
+              }
             />
           </div>
           <div id="submitEducation" className="buttonPair">
-            <SaveSubmissionButton />
+            <SaveSubmissionButton saveSubmission={saveSubmission}/>
             <CancelSubmissionButton toggleCredentialForm={toggleCredentialForm}/>
           </div>
         </>
@@ -112,11 +146,10 @@ const EducationInput = ({ education, setEducation }) => {
 
       <div className="educationItems">
         {education.map((educationItem) => {
-          // const slug = slugify(`${educationItem.institution}-${educationItem.degree}-${educationItem.startDate}-${educationItem.endDate}`);
           return (
             <div
               key={educationItem.id}
-              id={educationItem.id}
+              id={`input${educationItem.id}`}
               className="educationItem"
             >
               <p className="educationItem">{educationItem.institution}</p>
@@ -137,7 +170,7 @@ const EducationInput = ({ education, setEducation }) => {
                   type="button"
                   className="deleteCredential icon"
                   onClick={() => {
-                    handleDeleteCredential(educationItem.id);
+                    deleteCredential(educationItem.id);
                   }}
                 ></button>
               </div>

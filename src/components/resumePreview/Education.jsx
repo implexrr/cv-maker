@@ -8,7 +8,7 @@ const Education = ({educationData}) => {
         {educationData.map((educationItem) => {
           // const slug = slugify(`${educationItem.institution}-${educationItem.degree}-${educationItem.startDate}-${educationItem.endDate}`);
           return (
-            <div id={educationItem.id} key={educationItem.id} className={`${educationItem.hidden ? " hidden" : ""}`}>
+            <div id={`preview${educationItem.id}`} key={educationItem.id} className={`${educationItem.hidden ? " hidden" : ""}`}>
               <div className="top">
                 <h3 className="institution">{educationItem.institution}</h3>
                 <p className="location">{educationItem.location}</p>

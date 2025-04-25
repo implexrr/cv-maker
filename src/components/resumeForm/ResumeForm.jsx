@@ -5,7 +5,6 @@ import ExperienceInput from "./ExperienceInput"
 
 
 const ResumeForm = ({ personalDetails, setPersonalDetails, education, setEducation, experience, setExperience }) => {
-  console.log(education);
   return (
     <div id="resumeFormContainer">
       <div id="resumeForm">
