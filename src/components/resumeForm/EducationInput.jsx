@@ -1,10 +1,10 @@
 import { useState } from "react";
+import slugify from "../../utils/slugify";
 import SaveSubmissionButton from "./buttons/SaveSubmissionButton";
 import CancelSubmissionButton from "./buttons/CancelSubmissionButton";
 
 const EducationInput = ({ education, setEducation }) => {
   return (
-    <>
       <form className="education">
         <div className="formLabel">
           <div className="formLabel icon"></div>
@@ -73,12 +73,22 @@ const EducationInput = ({ education, setEducation }) => {
           <SaveSubmissionButton/>
           <CancelSubmissionButton/>
         </div>
-      </form>
-      <div className="educationItems">
-
+        <div className="educationItems">
+          {
+            education.map((educationItem) => {
+              const key = slugify(`${educationItem.institution}-${educationItem.degree}-${educationItem.startDate}-${educationItem.endDate}`);
+              return (
+                <div key={key} className="educationItem">
+                  <p className="educationItem">{educationItem.institution}</p>
+                  <button type="button" className="showCredential icon"></button>
+                </div>
+              );
+            })
+          }
       </div>
-    </>
+      </form>
   )
 }
+
 
 export default EducationInput

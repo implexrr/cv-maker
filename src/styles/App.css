@@ -113,9 +113,7 @@ h1 {
 /* Personal Details */
 /* ------------------------------------------------------------------------------------- */
 
-.personalDetails.inputContainer > input:hover {
-  background-color: var(--input-field-bg-hover-color)
-}
+
 
 form.personalDetails .formLabel.icon  {
   background-image: url('../assets/personal.svg');
@@ -162,6 +160,13 @@ form.education .formLabel.icon {
   opacity: 0.5;
 }
 
+.educationItem {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  font-weight: 600;
+}
+
 /* ------------------------------------------------------------------------------------- */
 /* Experience */
 /* ------------------------------------------------------------------------------------- */
@@ -199,7 +204,7 @@ button {
   font-size: 1rem;
 }
 
-button:hover {
+button:hover:not(.icon) {
   background-color: #f1f5f9;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(-1px);
@@ -232,8 +237,8 @@ form > * {
   padding: 0.5rem;
 }
 
-.inputContainer > input:hover {
-  background-color: var(--input-field-bg-hover-color)
+.inputContainer:hover input {
+  background: var(--input-field-bg-hover-color)
 }
 
 .formLabel {
@@ -256,4 +261,29 @@ form > * {
 
 .cancelSubmission {
   color: var(--clear-resume-fg-color);
+}
+
+.showCredential {
+  all: unset;
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/showCredential.svg');
+}
+
+.hideCredential {
+  all: unset;
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/hideCredential.svg');
+}
+
+.showCredential:hover, .hideCredential:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
