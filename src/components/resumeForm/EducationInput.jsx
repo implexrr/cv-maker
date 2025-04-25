@@ -4,86 +4,112 @@ import SaveSubmissionButton from "./buttons/SaveSubmissionButton";
 import CancelSubmissionButton from "./buttons/CancelSubmissionButton";
 
 const EducationInput = ({ education, setEducation }) => {
+  const [isAddingCredential, setIsAddingCredential] = useState(false);
+
   const handleDeleteCredential = (idToDelete) => {
     const newEducation = education.filter((item) => item.id !== idToDelete);
     setEducation(newEducation);
   };
 
-  const toggleCredentialVisibility= (idToToggle) => {
+  const toggleCredentialVisibility = (idToToggle) => {
     const newEducation = education.map((educationItem) =>
       educationItem.id === idToToggle
         ? { ...educationItem, hidden: !educationItem.hidden }
         : educationItem,
     );
     setEducation(newEducation);
-  }
+  };
+
+  const toggleCredentialForm = () => {
+    setIsAddingCredential((isAddingCredential) => !isAddingCredential);
+  };
+
+
 
   return (
     <form className="education">
-      <div className="formLabel">
+      <div
+        className="formLabel"
+        style={{
+          justifyContent: isAddingCredential
+          ? "center"
+          : "space-between"
+        }}
+      >
         <div className="formLabel icon"></div>
         <div className="formLabel title">Education</div>
-        <button type="button" className="addCredential icon"></button>
+        {!isAddingCredential && (
+          <button
+            type="button"
+            className="addCredential icon"
+            onClick={toggleCredentialForm}
+          ></button>
+        )}
       </div>
 
-      <div id="institutionInput" className="education inputContainer">
-        <label htmlFor="institution">Institution</label>
-        <input
-          type="text"
-          id="institution"
-          name="institution"
-          placeholder="University of Superdupercool"
-          required
-        />
-      </div>
+      {isAddingCredential && (
+        <>
+          <div id="institutionInput" className="education inputContainer">
+            <label htmlFor="institution">Institution</label>
+            <input
+              type="text"
+              id="institution"
+              name="institution"
+              placeholder="University of Superdupercool"
+              required
+            />
+          </div>
 
-      <div id="degreeInput" className="education inputContainer">
-        <label htmlFor="degree">Degree</label>
-        <input
-          type="text"
-          id="degree"
-          name="degree"
-          placeholder="Hon. BSc Mathematics"
-          required
-        />
-      </div>
+          <div id="degreeInput" className="education inputContainer">
+            <label htmlFor="degree">Degree</label>
+            <input
+              type="text"
+              id="degree"
+              name="degree"
+              placeholder="Hon. BSc Mathematics"
+              required
+            />
+          </div>
 
-      <div id="startDateInput" className="education inputContainer">
-        <label htmlFor="startDate">Start Date</label>
-        <input
-          type="text"
-          id="startDate"
-          name="startDate"
-          placeholder="November 5, 1605"
-          required
-        />
-      </div>
+          <div id="startDateInput" className="education inputContainer">
+            <label htmlFor="startDate">Start Date</label>
+            <input
+              type="text"
+              id="startDate"
+              name="startDate"
+              placeholder="November 5, 1605"
+              required
+            />
+          </div>
 
-      <div id="endDateInput" className="education inputContainer">
-        <label htmlFor="endDate">End Date</label>
-        <input
-          type="text"
-          id="endDate"
-          name="endDate"
-          placeholder="November 6, 1605"
-          required
-        />
-      </div>
+          <div id="endDateInput" className="education inputContainer">
+            <label htmlFor="endDate">End Date</label>
+            <input
+              type="text"
+              id="endDate"
+              name="endDate"
+              placeholder="November 6, 1605"
+              required
+            />
+          </div>
 
-      <div id="locationInput" className="education inputContainer">
-        <label htmlFor="location">Location</label>
-        <input
-          type="text"
-          id="location"
-          name="location"
-          placeholder="123 Foobar Rd, Barfoo, Canada"
-          required
-        />
-      </div>
-      <div id="submitEducation" className="buttonPair">
-        <SaveSubmissionButton />
-        <CancelSubmissionButton />
-      </div>
+          <div id="locationInput" className="education inputContainer">
+            <label htmlFor="location">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="123 Foobar Rd, Barfoo, Canada"
+              required
+            />
+          </div>
+          <div id="submitEducation" className="buttonPair">
+            <SaveSubmissionButton />
+            <CancelSubmissionButton toggleCredentialForm={toggleCredentialForm}/>
+          </div>
+        </>
+      )}
+
       <div className="educationItems">
         {education.map((educationItem) => {
           // const slug = slugify(`${educationItem.institution}-${educationItem.degree}-${educationItem.startDate}-${educationItem.endDate}`);

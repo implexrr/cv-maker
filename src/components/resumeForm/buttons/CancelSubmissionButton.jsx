@@ -1,6 +1,6 @@
-const CancelSubmissionButton = () => {
+const CancelSubmissionButton = ( { toggleCredentialForm } ) => {
   return (
-    <button type="button" className="cancelSubmission">
+    <button type="button" className="cancelSubmission" onClick={toggleCredentialForm}>
     <svg
       viewBox="0 0 48 48"
       width="36"
