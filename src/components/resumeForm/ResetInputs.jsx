@@ -11,5 +11,3 @@ const ResetInputs = () => {
 };
 
 export default ResetInputs;
-
-//TDL input-fields-container input-fields reset-inputs resume-container

@@ -7,6 +7,7 @@
   },
   "education": [
     {
+      "id": "lycelouislegrandhighschool18231828",
       "institution": "Lycée Louis-le-Grand",
       "degree": "High School",
       "startDate": "1823",
@@ -14,6 +15,7 @@
       "location": "123 Rue Saint-Jacques, 75005 Paris, France"
     },
     {
+      "id": "lcoleprparatoiremathematics1829present",
       "institution": "l'École préparatoire",
       "degree": "Mathematics",
       "startDate": "1829",

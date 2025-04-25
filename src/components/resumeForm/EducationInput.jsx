@@ -4,6 +4,12 @@ import SaveSubmissionButton from "./buttons/SaveSubmissionButton";
 import CancelSubmissionButton from "./buttons/CancelSubmissionButton";
 
 const EducationInput = ({ education, setEducation }) => {
+
+  function handleDeleteCredential(idToDelete) {
+    const newEducation = education.filter(item => item.id !== idToDelete);
+    setEducation(newEducation);
+  }
+
   return (
       <form className="education">
         <div className="formLabel">
@@ -37,34 +43,34 @@ const EducationInput = ({ education, setEducation }) => {
           />
         </div>
 
-        <div id="institutionInput" className="education inputContainer">
-          <label htmlFor="institution">Start Date</label>
+        <div id="startDateInput" className="education inputContainer">
+          <label htmlFor="startDate">Start Date</label>
           <input
             type="text"
-            id="institution"
-            name="institution"
+            id="startDate"
+            name="startDate"
             placeholder="November 5, 1605"
             required
           />
         </div>
 
-        <div id="institutionInput" className="education inputContainer">
-          <label htmlFor="institution">End Date</label>
+        <div id="endDateInput" className="education inputContainer">
+          <label htmlFor="endDate">End Date</label>
           <input
             type="text"
-            id="institution"
-            name="institution"
+            id="endDate"
+            name="endDate"
             placeholder="November 6, 1605"
             required
           />
         </div>
 
-        <div id="institutionInput" className="education inputContainer">
-          <label htmlFor="institution">Location</label>
+        <div id="locationInput" className="education inputContainer">
+          <label htmlFor="location">Location</label>
           <input
             type="text"
-            id="institution"
-            name="institution"
+            id="location"
+            name="location"
             placeholder="123 Foobar Rd, Barfoo, Canada"
             required
           />
@@ -76,14 +82,14 @@ const EducationInput = ({ education, setEducation }) => {
         <div className="educationItems">
           {
             education.map((educationItem) => {
-              const key = slugify(`${educationItem.institution}-${educationItem.degree}-${educationItem.startDate}-${educationItem.endDate}`);
+              // const slug = slugify(`${educationItem.institution}-${educationItem.degree}-${educationItem.startDate}-${educationItem.endDate}`);
               return (
-                <div key={key} className="educationItem">
+                <div key={educationItem.id} id={educationItem.id} className="educationItem">
                   <p className="educationItem">{educationItem.institution}</p>
                   <div className="buttonsContainer">
                     <button type="button" className="editCredential icon"></button>
                     <button type="button" className="showCredential icon"></button>
-                    <button type="button" className="deleteCredential icon"></button>
+                    <button type="button" className="deleteCredential icon" onClick={() => {handleDeleteCredential(educationItem.id)}}></button>
                   </div>
                 </div>
               );
