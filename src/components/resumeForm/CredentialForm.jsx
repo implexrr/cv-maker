@@ -1,10 +1,9 @@
 import FormLabel from "./labels/FormLabel";
 import FormBody from "./body/FormBody";
-import CredentialSlice from "./body/CredentialSlice";
+import CredentialSlices from "./body/CredentialSlices";
 import { useFormHandlers } from "../hooks/useFormHandlers";
 
 const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
-
   const {
     formData,
     setFormData,
@@ -12,38 +11,33 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
     toggleCredentialForm,
     saveSubmission,
     deleteCredential,
-    toggleCredentialVisibility
+    toggleCredentialVisibility,
   } = useFormHandlers({ resumeData, setResumeData, credentialType });
-  const labelText = credentialType.charAt(0).toUpperCase() + credentialType.slice(1);
+
+  const labelText =
+    credentialType.charAt(0).toUpperCase() + credentialType.slice(1);
+
   return (
     <form className={credentialType}>
       <FormLabel
         isAddingCredential={isAddingCredential}
-        toggleCredentialForm={toggleCredentialForm} // formutils
+        toggleCredentialForm={toggleCredentialForm}
         labelText={labelText}
       />
       {isAddingCredential && (
         <FormBody
           formData={formData}
           setFormData={setFormData}
-          saveSubmission={saveSubmission} // formutils
-          toggleCredentialForm={toggleCredentialForm} // formutils
+          saveSubmission={saveSubmission}
+          toggleCredentialForm={toggleCredentialForm}
         />
       )}
-
-      <div className={`${credentialType}Items`}>
-        {resumeData[credentialType].map((credentialItem) => {
-
-          return (
-            <CredentialSlice
-              key={credentialItem.id}
-              toggleCredentialVisibility={toggleCredentialVisibility} // formutils
-              deleteCredential={deleteCredential} // formutils
-              credentialItem={credentialItem}
-            />
-          );
-        })}
-      </div>
+      <CredentialSlices
+        credentialType={credentialType}
+        credentialItems={resumeData[credentialType]}
+        toggleCredentialVisibility={toggleCredentialVisibility}
+        deleteCredential={deleteCredential}
+      />
     </form>
   );
 };
