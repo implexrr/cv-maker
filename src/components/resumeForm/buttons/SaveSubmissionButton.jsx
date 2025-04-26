@@ -1,6 +1,6 @@
-const SaveSubmissionButton = ({saveSubmission, credentials, credentialType}) => {
+const SaveSubmissionButton = ({saveSubmission, credentialType}) => {
   return (
-    <button type="button" className="saveSubmission" onClick={() => {saveSubmission(credentials, credentialType)}}>
+    <button type="button" className="saveSubmission" onClick={() => {saveSubmission(credentialType)}}>
     <svg
       viewBox="0 0 48 48"
       width="36"

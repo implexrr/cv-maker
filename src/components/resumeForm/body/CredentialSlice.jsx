@@ -1,4 +1,4 @@
-const CredentialSlice = ({credentials, credentialType, credentialItem, toggleCredentialVisibility, deleteCredential, id}) => {
+const CredentialSlice = ({credentialType, credentialItem, toggleCredentialVisibility, deleteCredential, id}) => {
   return (
     <div
       id={`input${id}`}
@@ -15,14 +15,14 @@ const CredentialSlice = ({credentials, credentialType, credentialItem, toggleCre
               : "showCredential icon"
           }
           onClick={() => {
-            toggleCredentialVisibility(credentialItem.id, credentials, credentialType);
+            toggleCredentialVisibility(credentialItem.id, credentialType);
           }}
         ></button>
         <button
           type="button"
           className="deleteCredential icon"
           onClick={() => {
-            deleteCredential(credentialItem.id, credentials, credentialType);
+            deleteCredential(credentialItem.id, credentialType);
           }}
         ></button>
       </div>

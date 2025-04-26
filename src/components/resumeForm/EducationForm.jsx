@@ -5,37 +5,38 @@ import FormBody from "./body/FormBody";
 import CredentialSlice from "./body/CredentialSlice";
 import emptyForm from "../../data/emptyForm.json"
 
-const EducationForm = ({ education, setResumeData }) => {
+const EducationForm = ({ resumeData, setResumeData }) => {
   const [isAddingCredential, setIsAddingCredential] = useState(false);
   const [formData, setFormData] = useState(emptyForm);
   
-  const setCredentialData = (credentials, newCredentials) =>
-    setResumeData((resumeData) => ({ ...resumeData, [credentials]: newCredentials}));
+  const setCredentialData = (credentialType, newCredentials) =>
+    setResumeData((resumeData) => ({ ...resumeData, [credentialType]: newCredentials}));
 
   const toggleCredentialForm = () => {
     setIsAddingCredential((isAddingCredential) => !isAddingCredential);
     setFormData(emptyForm);
   };
 
-  const deleteCredential = (idToDelete, credentials, credentialType) => {
-    const newCredentials = credentials.filter((item) => item.id !== idToDelete);
+  const deleteCredential = (idToDelete, credentialType) => {
+    const newCredentials = resumeData[credentialType].filter((item) => item.id !== idToDelete);
     setCredentialData(credentialType, newCredentials);
   };
 
-  const saveSubmission = (credentials, credentialType) => {
+  // TDL: force form to always submit key-val pair with credentialType = "whatever" so that you can get credentialType from credentials, then save submission accordingly
+  const saveSubmission = (credentialType) => {
     const slug = slugify(
       `${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`,
     );
     const newItem = { ...formData, id: slug };
-    setCredentialData(credentialType, [...credentials, newItem]);
+    setCredentialData(credentialType, [...resumeData[credentialType], newItem]);
     toggleCredentialForm();
   };
 
-  const toggleCredentialVisibility = (idToToggle, credentials, credentialType) => {
-    const newCredentials = credentials.map((credentialItem) =>
-      credentialItem.id === idToToggle
-        ? { ...credentialItem, hidden: !credentialItem.hidden }
-        : credentialItem,
+  const toggleCredentialVisibility = (idToToggle, credentialType) => {
+    const newCredentials = resumeData[credentialType].map((item) =>
+      item.id === idToToggle
+        ? { ...item, hidden: !item.hidden }
+        : item,
     );
     setCredentialData(credentialType, newCredentials);
   };
@@ -49,7 +50,6 @@ const EducationForm = ({ education, setResumeData }) => {
       />
       {isAddingCredential && (
         <FormBody
-          credentials={education}
           credentialType="education"
           formData={formData}
           setFormData={setFormData}
@@ -59,16 +59,15 @@ const EducationForm = ({ education, setResumeData }) => {
       )}
 
       <div className="educationItems">
-        {education.map((educationItem) => {
+        {resumeData["education"].map((educationItem) => {
           return (
             <CredentialSlice
               key={educationItem.id}
-              credentials={education}
+              id={educationItem.id}
               credentialType="education"
               credentialItem={educationItem}
               toggleCredentialVisibility={toggleCredentialVisibility}
               deleteCredential={deleteCredential}
-              id={educationItem.id}
             />
           );
         })}

@@ -14,7 +14,7 @@ const ResumeForm = ({ resumeData, setResumeData }) => {
           setResumeData={setResumeData}
         />
         <EducationForm
-          education={resumeData.education}
+          resumeData={resumeData}
           setResumeData={setResumeData}
         />
         <ExperienceForm
