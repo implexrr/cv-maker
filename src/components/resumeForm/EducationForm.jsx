@@ -37,7 +37,6 @@ const EducationForm = ({ resumeData, setResumeData }) => {
 
   // formutils
   const toggleCredentialVisibility = (idToToggle, credentialType) => {
-
     const newCredentials = resumeData[credentialType].map((item) =>
       item.id === idToToggle
         ? { ...item, hidden: !item.hidden }
