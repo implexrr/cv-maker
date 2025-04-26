@@ -1,11 +1,14 @@
 import { useState } from "react";
 
-const PersonalDetailsForm = ({ personalDetails, setPersonalDetails }) => {
+const PersonalDetailsForm = ({ personalDetails, setResumeData }) => {
   const [isExpanded, setIsExpanded] = useState(true);
 
   const handleToggle = () => {
     setIsExpanded((expanded) => !expanded);
   };
+
+  const setPersonalDetails = (personalDetails) =>
+    setResumeData((resumeData) => ({ ...resumeData, personalDetails }));
 
   const handleChange = (e) => {
     const { name, value } = e.target;

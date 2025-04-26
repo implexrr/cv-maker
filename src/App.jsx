@@ -6,32 +6,18 @@ import sampleCV from "./data/sampleCV.json"
 import './styles/App.css'
 
 function App() {
-  // Initialize state with the structure of sampleCV
   const [resumeData, setResumeData] = useState(sampleCV);
-
-  const setPersonalDetails = (personalDetails) =>
-    setResumeData((resumeData) => ({ ...resumeData, personalDetails }));
-
-  const setEducation = (education) =>
-    setResumeData((resumeData) => ({ ...resumeData, education }));
-
-  const setExperience = (experience) =>
-    setResumeData((resumeData) => ({ ...resumeData, experience }));
 
   return (
     <>
-      <Header></Header>
+      <Header />
       <ResumeForm
-        personalDetails={resumeData.personalDetails}
-        setPersonalDetails={setPersonalDetails}
-        education={resumeData.education}
-        setEducation={setEducation}
-        experience={resumeData.experience}
-        setExperience={setExperience}
+        resumeData={resumeData}
+        setResumeData={setResumeData}
       />
-      <ResumePreview resumeData={resumeData}></ResumePreview>
+      <ResumePreview resumeData={resumeData} />
     </>
-  )
+  );
 }
 
 export default App

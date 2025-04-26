@@ -5,9 +5,12 @@ import FormBody from "./body/FormBody";
 import EducationItem from "./body/EducationItem";
 import { emptyForm } from "../../utils/formUtils";
 
-const EducationForm = ({ education, setEducation }) => {
+const EducationForm = ({ education, setResumeData }) => {
   const [isAddingCredential, setIsAddingCredential] = useState(false);
   const [formData, setFormData] = useState(emptyForm);
+
+  const setEducationData = (education) =>
+    setResumeData((resumeData) => ({ ...resumeData, education }));
 
   const toggleCredentialForm = () => {
     setIsAddingCredential((isAddingCredential) => !isAddingCredential);
@@ -15,7 +18,7 @@ const EducationForm = ({ education, setEducation }) => {
 
   const deleteCredential = (idToDelete) => {
     const newEducation = education.filter((item) => item.id !== idToDelete);
-    setEducation(newEducation);
+    setEducationData(newEducation);
   };
 
   const saveSubmission = () => {
@@ -23,7 +26,7 @@ const EducationForm = ({ education, setEducation }) => {
       `${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`,
     );
     const newItem = { ...formData, id: slug };
-    setEducation([...education, newItem]);
+    setEducationData([...education, newItem]);
     setFormData(emptyForm);
     toggleCredentialForm();
   };
@@ -34,7 +37,7 @@ const EducationForm = ({ education, setEducation }) => {
         ? { ...educationItem, hidden: !educationItem.hidden }
         : educationItem,
     );
-    setEducation(newEducation);
+    setEducationData(newEducation);
   };
 
   return (

@@ -4,22 +4,22 @@ import EducationForm from "./EducationForm"
 import ExperienceForm from "./ExperienceForm"
 
 
-const ResumeForm = ({ personalDetails, setPersonalDetails, education, setEducation, experience, setExperience }) => {
+const ResumeForm = ({ resumeData, setResumeData }) => {
   return (
     <div id="resumeFormContainer">
       <div id="resumeForm">
         <ResetForms></ResetForms>
         <PersonalDetailsForm
-          personalDetails={personalDetails}
-          setPersonalDetails={setPersonalDetails}
+          personalDetails={resumeData.personalDetails}
+          setResumeData={setResumeData}
         />
         <EducationForm
-          education={education}
-          setEducation={setEducation}
+          education={resumeData.education}
+          setResumeData={setResumeData}
         />
         <ExperienceForm
-          experience={experience}
-          setExperience={setExperience}     
+          experience={resumeData.experience}
+          setResumeData={setResumeData}     
         />
       </div>
     </div>
