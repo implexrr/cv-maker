@@ -93,7 +93,7 @@ h1 {
 /* Education */
 /* ------------------------------------------------------------------------------------- */
 
-.educationItem {
+.credentialSlice {
   justify-content: space-between;
   align-items: center;
   display: flex;

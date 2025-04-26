@@ -1,4 +1,4 @@
-const FormLabel = ({isAddingCredential, toggleCredentialForm, formType}) => {
+const FormLabel = ({isAddingCredential, toggleCredentialForm, labelText}) => {
   return (
       <div
         className="formLabel"
@@ -7,7 +7,7 @@ const FormLabel = ({isAddingCredential, toggleCredentialForm, formType}) => {
         }}
       >
         <div className="formLabel icon"></div>
-        <div className="formLabel title">{formType}</div>
+        <div className="formLabel title">{labelText}</div>
         {!isAddingCredential && (
           <button
             type="button"

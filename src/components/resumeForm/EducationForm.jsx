@@ -2,42 +2,42 @@ import { useState } from "react";
 import slugify from "../../utils/slugify";
 import FormLabel from "./labels/FormLabel";
 import FormBody from "./body/FormBody";
-import EducationItem from "./body/EducationItem";
+import CredentialSlice from "./body/CredentialSlice";
 import { emptyForm } from "../../utils/formUtils";
 
 const EducationForm = ({ education, setResumeData }) => {
   const [isAddingCredential, setIsAddingCredential] = useState(false);
   const [formData, setFormData] = useState(emptyForm);
-
-  const setEducationData = (education) =>
-    setResumeData((resumeData) => ({ ...resumeData, education }));
+  
+  const setCredentialData = (credentials, newCredentials) =>
+    setResumeData((resumeData) => ({ ...resumeData, [credentials]: newCredentials}));
 
   const toggleCredentialForm = () => {
     setIsAddingCredential((isAddingCredential) => !isAddingCredential);
   };
 
-  const deleteCredential = (idToDelete) => {
-    const newEducation = education.filter((item) => item.id !== idToDelete);
-    setEducationData(newEducation);
+  const deleteCredential = (idToDelete, credentials, credentialType) => {
+    const newCredentials = credentials.filter((item) => item.id !== idToDelete);
+    setCredentialData(credentialType, newCredentials);
   };
 
-  const saveSubmission = () => {
+  const saveSubmission = (credentials, credentialType) => {
     const slug = slugify(
       `${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`,
     );
     const newItem = { ...formData, id: slug };
-    setEducationData([...education, newItem]);
+    setCredentialData(credentialType, [...credentials, newItem]);
     setFormData(emptyForm);
     toggleCredentialForm();
   };
 
-  const toggleCredentialVisibility = (idToToggle) => {
-    const newEducation = education.map((educationItem) =>
-      educationItem.id === idToToggle
-        ? { ...educationItem, hidden: !educationItem.hidden }
-        : educationItem,
+  const toggleCredentialVisibility = (idToToggle, credentials, credentialType) => {
+    const newCredentials = credentials.map((credentialItem) =>
+      credentialItem.id === idToToggle
+        ? { ...credentialItem, hidden: !credentialItem.hidden }
+        : credentialItem,
     );
-    setEducationData(newEducation);
+    setCredentialData(credentialType, newCredentials);
   };
 
   return (
@@ -45,10 +45,12 @@ const EducationForm = ({ education, setResumeData }) => {
       <FormLabel
         isAddingCredential={isAddingCredential}
         toggleCredentialForm={toggleCredentialForm}
-        formType="Education"
+        labelText="Education"
       />
       {isAddingCredential && (
         <FormBody
+          credentials={education}
+          credentialType="education"
           formData={formData}
           setFormData={setFormData}
           saveSubmission={saveSubmission}
@@ -59,9 +61,11 @@ const EducationForm = ({ education, setResumeData }) => {
       <div className="educationItems">
         {education.map((educationItem) => {
           return (
-            <EducationItem
+            <CredentialSlice
               key={educationItem.id}
-              educationItem={educationItem}
+              credentials={education}
+              credentialType="education"
+              credentialItem={educationItem}
               toggleCredentialVisibility={toggleCredentialVisibility}
               deleteCredential={deleteCredential}
               id={educationItem.id}

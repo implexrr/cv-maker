@@ -1,28 +1,28 @@
-const EducationItem = ({educationItem, toggleCredentialVisibility, deleteCredential, id}) => {
+const CredentialSlice = ({credentials, credentialType, credentialItem, toggleCredentialVisibility, deleteCredential, id}) => {
   return (
     <div
       id={`input${id}`}
-      className="educationItem"
+      className={"credentialSlice"}
     >
-      <p className="educationItem">{educationItem.institution}</p>
+      <p className="credentialSlice">{credentialType == "education" ? credentialItem.institution : credentialItem.companyName}</p>
       <div className="buttonsContainer">
         <button type="button" className="editCredential icon"></button>
         <button
           type="button"
           className={
-            educationItem.hidden
+            credentialItem.hidden
               ? "hideCredential icon"
               : "showCredential icon"
           }
           onClick={() => {
-            toggleCredentialVisibility(educationItem.id);
+            toggleCredentialVisibility(credentialItem.id, credentials, credentialType);
           }}
         ></button>
         <button
           type="button"
           className="deleteCredential icon"
           onClick={() => {
-            deleteCredential(educationItem.id);
+            deleteCredential(credentialItem.id, credentials, credentialType);
           }}
         ></button>
       </div>
@@ -30,4 +30,4 @@ const EducationItem = ({educationItem, toggleCredentialVisibility, deleteCredent
   )
 }
 
-export default EducationItem
+export default CredentialSlice
