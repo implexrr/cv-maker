@@ -4,7 +4,7 @@ const CredentialSlice = ({credentialType, credentialItem, toggleCredentialVisibi
       id={`input${id}`}
       className={"credentialSlice"}
     >
-      <p className="credentialSlice">{credentialType == "education" ? credentialItem.institution : credentialItem.companyName}</p>
+      <p className="credentialSlice">{credentialType == "education" ? credentialItem.institution : credentialItem.institution}</p>
       <div className="buttonsContainer">
         <button type="button" className="editCredential icon"></button>
         <button
