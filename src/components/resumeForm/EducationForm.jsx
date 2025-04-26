@@ -3,7 +3,7 @@ import slugify from "../../utils/slugify";
 import FormLabel from "./labels/FormLabel";
 import FormBody from "./body/FormBody";
 import CredentialSlice from "./body/CredentialSlice";
-import { emptyForm } from "../../utils/formUtils";
+import emptyForm from "../../data/emptyForm.json"
 
 const EducationForm = ({ education, setResumeData }) => {
   const [isAddingCredential, setIsAddingCredential] = useState(false);
@@ -14,6 +14,7 @@ const EducationForm = ({ education, setResumeData }) => {
 
   const toggleCredentialForm = () => {
     setIsAddingCredential((isAddingCredential) => !isAddingCredential);
+    setFormData(emptyForm);
   };
 
   const deleteCredential = (idToDelete, credentials, credentialType) => {
@@ -27,7 +28,6 @@ const EducationForm = ({ education, setResumeData }) => {
     );
     const newItem = { ...formData, id: slug };
     setCredentialData(credentialType, [...credentials, newItem]);
-    setFormData(emptyForm);
     toggleCredentialForm();
   };
 
