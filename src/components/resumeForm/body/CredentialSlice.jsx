@@ -1,10 +1,10 @@
-const CredentialSlice = ({credentialType, credentialItem, toggleCredentialVisibility, deleteCredential, id}) => {
+const CredentialSlice = ({credentialItem, toggleCredentialVisibility, deleteCredential}) => {
   return (
     <div
-      id={`input${id}`}
+      id={`input${credentialItem.id}`}
       className={"credentialSlice"}
     >
-      <p className="credentialSlice">{credentialType == "education" ? credentialItem.institution : credentialItem.institution}</p>
+      <p className="credentialSlice">{credentialItem.institution}</p>
       <div className="buttonsContainer">
         <button type="button" className="editCredential icon"></button>
         <button
@@ -15,14 +15,14 @@ const CredentialSlice = ({credentialType, credentialItem, toggleCredentialVisibi
               : "showCredential icon"
           }
           onClick={() => {
-            toggleCredentialVisibility(credentialItem.id, credentialType);
+            toggleCredentialVisibility(credentialItem.id, credentialItem.type);
           }}
         ></button>
         <button
           type="button"
           className="deleteCredential icon"
           onClick={() => {
-            deleteCredential(credentialItem.id, credentialType);
+            deleteCredential(credentialItem.id, credentialItem.type);
           }}
         ></button>
       </div>

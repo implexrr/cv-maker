@@ -27,12 +27,14 @@ const EducationForm = ({ resumeData, setResumeData }) => {
     const slug = slugify(
       `${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`,
     );
-    const newItem = { ...formData, id: slug };
+    const newItem = { ...formData, id: slug, type: credentialType };
     setCredentialData(credentialType, [...resumeData[credentialType], newItem]);
     toggleCredentialForm();
   };
 
   const toggleCredentialVisibility = (idToToggle, credentialType) => {
+    console.log(credentialType);
+    console.log(resumeData);
     const newCredentials = resumeData[credentialType].map((item) =>
       item.id === idToToggle
         ? { ...item, hidden: !item.hidden }
@@ -45,7 +47,7 @@ const EducationForm = ({ resumeData, setResumeData }) => {
     <form className="education">
       <FormLabel
         isAddingCredential={isAddingCredential}
-        toggleCredentialForm={toggleCredentialForm}
+        toggleCredentialForm={toggleCredentialForm} // formutils
         labelText="Education"
       />
       {isAddingCredential && (
@@ -53,21 +55,20 @@ const EducationForm = ({ resumeData, setResumeData }) => {
           credentialType="education"
           formData={formData}
           setFormData={setFormData}
-          saveSubmission={saveSubmission}
-          toggleCredentialForm={toggleCredentialForm}
+          saveSubmission={saveSubmission} // formutils
+          toggleCredentialForm={toggleCredentialForm} // formutils
         />
       )}
 
       <div className="educationItems">
-        {resumeData["education"].map((educationItem) => {
+        {resumeData["education"].map((credentialItem) => {
+          console.log(credentialItem);
           return (
             <CredentialSlice
-              key={educationItem.id}
-              id={educationItem.id}
-              credentialType="education"
-              credentialItem={educationItem}
-              toggleCredentialVisibility={toggleCredentialVisibility}
-              deleteCredential={deleteCredential}
+              key={credentialItem.id}
+              toggleCredentialVisibility={toggleCredentialVisibility} // formutils
+              deleteCredential={deleteCredential} // formutils
+              credentialItem={credentialItem}
             />
           );
         })}
