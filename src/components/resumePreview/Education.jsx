@@ -1,12 +1,9 @@
-import slugify from "../../utils/slugify";
-
 const Education = ({educationData}) => {
   return (
     <div id="educationPreview">
       <h2 className="education title">Education</h2>
       <div className="education details container">
         {educationData.map((educationItem) => {
-          // const slug = slugify(`${educationItem.institution}-${educationItem.degree}-${educationItem.startDate}-${educationItem.endDate}`);
           return (
             <div id={`preview${educationItem.id}`} key={educationItem.id} className={`${educationItem.hidden ? " hidden" : ""}`}>
               <div className="top">
