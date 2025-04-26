@@ -1,5 +1,5 @@
-import slugify from "../../../utils/slugify";
-import emptyForm from "../../../data/emptyForm.json";
+import slugify from "../../utils/slugify"
+import emptyForm from "../../data/emptyForm.json"
 
 import { useState } from "react";
 
