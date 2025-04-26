@@ -9,32 +9,35 @@ const EducationForm = ({ resumeData, setResumeData }) => {
   const [isAddingCredential, setIsAddingCredential] = useState(false);
   const [formData, setFormData] = useState(emptyForm);
   
+  // formutils
   const setCredentialData = (credentialType, newCredentials) =>
     setResumeData((resumeData) => ({ ...resumeData, [credentialType]: newCredentials}));
 
-  const toggleCredentialForm = () => {
+  // formutils
+  const toggleCredentialForm = (credentialType) => {
     setIsAddingCredential((isAddingCredential) => !isAddingCredential);
-    setFormData(emptyForm);
+    setFormData(emptyForm[credentialType]);
   };
 
+  // formutils
   const deleteCredential = (idToDelete, credentialType) => {
     const newCredentials = resumeData[credentialType].filter((item) => item.id !== idToDelete);
     setCredentialData(credentialType, newCredentials);
   };
 
-  // TDL: force form to always submit key-val pair with credentialType = "whatever" so that you can get credentialType from credentials, then save submission accordingly
+  // formutils
   const saveSubmission = (credentialType) => {
     const slug = slugify(
       `${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`,
     );
-    const newItem = { ...formData, id: slug, type: credentialType };
+    const newItem = { ...formData, id: slug, type: credentialType, hidde: false };
     setCredentialData(credentialType, [...resumeData[credentialType], newItem]);
-    toggleCredentialForm();
+    toggleCredentialForm(credentialType);
   };
 
+  // formutils
   const toggleCredentialVisibility = (idToToggle, credentialType) => {
-    console.log(credentialType);
-    console.log(resumeData);
+
     const newCredentials = resumeData[credentialType].map((item) =>
       item.id === idToToggle
         ? { ...item, hidden: !item.hidden }
@@ -49,6 +52,7 @@ const EducationForm = ({ resumeData, setResumeData }) => {
         isAddingCredential={isAddingCredential}
         toggleCredentialForm={toggleCredentialForm} // formutils
         labelText="Education"
+        credentialType="education"
       />
       {isAddingCredential && (
         <FormBody
@@ -62,7 +66,7 @@ const EducationForm = ({ resumeData, setResumeData }) => {
 
       <div className="educationItems">
         {resumeData["education"].map((credentialItem) => {
-          console.log(credentialItem);
+
           return (
             <CredentialSlice
               key={credentialItem.id}

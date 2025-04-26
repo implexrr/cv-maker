@@ -1,4 +1,4 @@
-const FormLabel = ({isAddingCredential, toggleCredentialForm, labelText}) => {
+const FormLabel = ({isAddingCredential, toggleCredentialForm, credentialType, labelText}) => {
   return (
       <div
         className="formLabel"
@@ -12,7 +12,7 @@ const FormLabel = ({isAddingCredential, toggleCredentialForm, labelText}) => {
           <button
             type="button"
             className="addCredential icon"
-            onClick={toggleCredentialForm}
+            onClick={() => {toggleCredentialForm(credentialType)}}
           ></button>
         )}
       </div>
