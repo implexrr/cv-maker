@@ -1,3 +1,4 @@
+import capitalize from "../../utils/capitalize";
 import FormLabel from "./labels/FormLabel";
 import FormBody from "./body/FormBody";
 import CredentialSlices from "./body/CredentialSlices";
@@ -14,15 +15,12 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
     toggleCredentialVisibility,
   } = useFormHandlers({ resumeData, setResumeData, credentialType });
 
-  const labelText =
-    credentialType.charAt(0).toUpperCase() + credentialType.slice(1);
-
   return (
     <form className={credentialType}>
       <FormLabel
         isAddingCredential={isAddingCredential}
         toggleForm={toggleForm}
-        labelText={labelText}
+        labelText={capitalize(credentialType)}
       />
       {isAddingCredential && (
         // TDL - MAKE THIS MORE DYNAMIC AND ALSO PASS FIELDS
