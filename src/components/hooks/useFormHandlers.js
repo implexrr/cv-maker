@@ -10,7 +10,7 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
   const setCredentialData = (newCredentials) =>
     setResumeData((resumeData) => ({ ...resumeData, [credentialType]: newCredentials}));
 
-  const toggleCredentialForm = () => {
+  const toggleForm = () => {
     setIsAddingCredential((isAddingCredential) => !isAddingCredential);
     setFormData(emptyForm[credentialType]);
   };
@@ -22,7 +22,7 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
     );
     const newItem = { ...formData, id: slug, type: credentialType, hidde: false };
     setCredentialData([...resumeData[credentialType], newItem]);
-    toggleCredentialForm();
+    toggleForm();
   };
   
 
@@ -45,7 +45,7 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
     formData,
     setFormData,
     isAddingCredential,
-    toggleCredentialForm,
+    toggleForm,
     saveSubmission,
     deleteCredential,
     toggleCredentialVisibility

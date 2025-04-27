@@ -1,7 +1,7 @@
 import SaveSubmissionButton from "../buttons/SaveSubmissionButton";
 import CancelSubmissionButton from "../buttons/CancelSubmissionButton";
 
-const FormBody = ({formData, setFormData, saveSubmission, toggleCredentialForm}) => {
+const FormBody = ({formData, setFormData, saveSubmission, toggleForm}) => {
   console.log(formData);
   return (
     <div className="formBody">
@@ -96,7 +96,7 @@ const FormBody = ({formData, setFormData, saveSubmission, toggleCredentialForm})
       </div>
       <div id="submitEducation" className="buttonPair">
         <SaveSubmissionButton saveSubmission={saveSubmission} />
-        <CancelSubmissionButton toggleCredentialForm={toggleCredentialForm} />
+        <CancelSubmissionButton toggleForm={toggleForm} />
       </div>
     </div>
   );

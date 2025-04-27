@@ -8,7 +8,7 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
     formData,
     setFormData,
     isAddingCredential,
-    toggleCredentialForm,
+    toggleForm,
     saveSubmission,
     deleteCredential,
     toggleCredentialVisibility,
@@ -21,15 +21,16 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
     <form className={credentialType}>
       <FormLabel
         isAddingCredential={isAddingCredential}
-        toggleCredentialForm={toggleCredentialForm}
+        toggleForm={toggleForm}
         labelText={labelText}
       />
       {isAddingCredential && (
+        // TDL - MAKE THIS MORE DYNAMIC AND ALSO PASS FIELDS
         <FormBody
           formData={formData}
           setFormData={setFormData}
           saveSubmission={saveSubmission}
-          toggleCredentialForm={toggleCredentialForm}
+          toggleForm={toggleForm}
         />
       )}
       <CredentialSlices
