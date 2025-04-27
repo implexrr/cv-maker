@@ -6,11 +6,11 @@ const Experience = ({experienceData}) => {
       <h2 className="experience title">Experience</h2>
       <div className="experience details container">
         {experienceData.map((experienceItem) => {
-          const key = slugify(`${experienceItem.companyName}-${experienceItem.title}-${experienceItem.startDate}-${experienceItem.endDate}`);
+          const key = slugify(`${experienceItem.institution}-${experienceItem.title}-${experienceItem.startDate}-${experienceItem.endDate}`);
           return (
             <div key={key} className="experienceItem">
               <div className="top">
-                <h3 className="companyName">{experienceItem.companyName}</h3>
+                <h3 className="institution">{experienceItem.institution}</h3>
                 <p className="location">{experienceItem.location}</p>
               </div>
               <div className="bottom">

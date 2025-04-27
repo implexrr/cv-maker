@@ -13,6 +13,7 @@
       "startDate": "1823",
       "endDate": "1828",
       "location": "123 Rue Saint-Jacques, 75005 Paris, France",
+      "type": "education",
       "hidden": false
     },
     {
@@ -22,17 +23,20 @@
       "startDate": "1829",
       "endDate": "Present",
       "location": "45 Rue d'Ulm, 75005 Paris, France",
+      "type": "education",
       "hidden": false
     }
   ],
   "experience": [
     {
-      "companyName": "Guarde Nationale",
+      "id": "TDL",
+      "institution": "Guarde Nationale",
       "title": "Artilleryman",
       "startDate": "1830",
       "endDate": "Present",
       "location": "144 Rue du Faubourg Saint-Martin, 75010 Paris, France",
       "description": "J'ai rêvé de tirer beaucoup de boulets de canon, mais je n'ai jamais vraiment fait grand-chose.",
+      "type": "experience",
       "hidden": false
     }
   ]

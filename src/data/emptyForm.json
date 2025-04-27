@@ -1,8 +1,17 @@
 {
-  "id": "",
-  "institution": "",
-  "degree": "",
-  "startDate": "",
-  "endDate": "",
-  "location": ""
+  "education": {
+    "institution": "",
+    "degree": "",
+    "startDate": "",
+    "endDate": "",
+    "location": ""
+  },
+  "experience": {
+    "institution": "",
+    "title": "",
+    "startDate": "",
+    "endDate": "",
+    "location": "",
+    "description": ""
+  }
 }
