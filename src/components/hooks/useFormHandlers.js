@@ -17,10 +17,11 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
 
 
   const saveSubmission = () => {
+
     const slug = slugify(
       `${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`,
     );
-    const newItem = { ...formData, id: slug, type: credentialType, hidde: false };
+    const newItem = { ...formData, id: slug, type: credentialType, hidden: false };
     setCredentialData([...resumeData[credentialType], newItem]);
     toggleForm();
   };
