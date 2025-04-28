@@ -30,5 +30,9 @@ const CredentialSlice = ({credentialItem, toggleCredentialVisibility, deleteCred
   )
 }
 
+// TDL : credential slice opens up new "edit form". 
+// This edit form will know which credential item is being edited, because we will pass the id of the credential item through to it
+// We will keep track of which form it is as well (for validation pur)
+
 
 export default CredentialSlice

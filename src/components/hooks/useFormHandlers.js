@@ -16,7 +16,6 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
   };
 
   const saveSubmission = (e) => {
-    console.log(e);
     e.preventDefault();
     const slug = slugify(
       `${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`,

@@ -6,7 +6,6 @@ import CredentialSlices from "./body/CredentialSlices";
 
 import { useFormHandlers } from "../hooks/useFormHandlers";
 import capitalize from "../../utils/capitalize";
-import { useRef } from "react";
 
 const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
   const {
@@ -20,7 +19,7 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
   } = useFormHandlers({ resumeData, setResumeData, credentialType });
 
   return (
-    <form className={credentialType}>
+    <form onSubmit={saveSubmission} className={credentialType}>
       <FormLabel
         isAddingCredential={isAddingCredential}
         toggleForm={toggleForm}
