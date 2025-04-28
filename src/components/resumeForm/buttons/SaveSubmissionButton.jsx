@@ -1,4 +1,4 @@
-const SaveSubmissionButton = ({saveSubmission}) => {
+const SaveSubmissionButton = ({saveSubmission, formRef}) => {
   return (
     <button type="button" className="saveSubmission" onClick={() => {saveSubmission()}}>
     <svg

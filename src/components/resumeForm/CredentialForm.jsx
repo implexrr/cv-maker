@@ -1,12 +1,15 @@
-import capitalize from "../../utils/capitalize";
 import credentialFields from "../../data/credentialsFields.json"
+
 import FormLabel from "./labels/FormLabel";
 import FormBody from "./body/FormBody";
 import CredentialSlices from "./body/CredentialSlices";
+
 import { useFormHandlers } from "../hooks/useFormHandlers";
+import capitalize from "../../utils/capitalize";
+import { useRef } from "react";
 
 const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
-  console.log(credentialFields[credentialType]);
+  const formRef = useRef(null);
   const {
     formData,
     setFormData,
@@ -15,10 +18,10 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
     saveSubmission,
     deleteCredential,
     toggleCredentialVisibility,
-  } = useFormHandlers({ resumeData, setResumeData, credentialType });
+  } = useFormHandlers({ resumeData, setResumeData, credentialType, formRef });
 
   return (
-    <form className={credentialType}>
+    <form ref={formRef} className={credentialType}>
       <FormLabel
         isAddingCredential={isAddingCredential}
         toggleForm={toggleForm}
@@ -26,6 +29,7 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
       />
       {isAddingCredential && (
         <FormBody
+          formRef={formRef}
           formData={formData}
           setFormData={setFormData}
           saveSubmission={saveSubmission}
