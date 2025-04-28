@@ -30,4 +30,5 @@ const CredentialSlice = ({credentialItem, toggleCredentialVisibility, deleteCred
   )
 }
 
+
 export default CredentialSlice

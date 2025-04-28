@@ -9,7 +9,6 @@ import capitalize from "../../utils/capitalize";
 import { useRef } from "react";
 
 const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
-  const formRef = useRef(null);
   const {
     formData,
     setFormData,
@@ -18,10 +17,10 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
     saveSubmission,
     deleteCredential,
     toggleCredentialVisibility,
-  } = useFormHandlers({ resumeData, setResumeData, credentialType, formRef });
+  } = useFormHandlers({ resumeData, setResumeData, credentialType });
 
   return (
-    <form ref={formRef} className={credentialType}>
+    <form className={credentialType}>
       <FormLabel
         isAddingCredential={isAddingCredential}
         toggleForm={toggleForm}
@@ -29,7 +28,6 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
       />
       {isAddingCredential && (
         <FormBody
-          formRef={formRef}
           formData={formData}
           setFormData={setFormData}
           saveSubmission={saveSubmission}
