@@ -3,7 +3,7 @@ import emptyForm from "../../data/emptyForm.json"
 
 import { useState } from "react";
 
-export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
+export function useFormHandlers({ resumeData, setResumeData, credentialType, formRef }) {
   const [formData, setFormData] = useState(emptyForm[credentialType]);
   const [isAddingCredential, setIsAddingCredential] = useState(false);
 
@@ -15,9 +15,11 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
     setFormData(emptyForm[credentialType]);
   };
 
-
   const saveSubmission = () => {
-
+    if (!formRef.current.checkValidity()) {
+      formRef.current.reportValidity();
+      return;
+    }
     const slug = slugify(
       `${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`,
     );
