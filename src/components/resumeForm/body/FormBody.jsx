@@ -4,7 +4,7 @@ import slugify from "../../../utils/slugify";
 import SaveSubmissionButton from "../buttons/SaveSubmissionButton";
 import CancelSubmissionButton from "../buttons/CancelSubmissionButton";
 
-const FormBody = ({formRef, formData, setFormData, saveSubmission, toggleForm, credentialFields}) => {
+const FormBody = ({formData, setFormData, saveSubmission, toggleForm, credentialFields}) => {
   return (
     <div className="formBody">
       {
