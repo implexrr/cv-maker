@@ -5,7 +5,7 @@ const Experience = ({experienceData}) => {
       <div className="experience details container">
         {experienceData.map((experienceItem) => {
           return (
-            <div id={`preview${experienceItem.id}`} key={experienceItem.id} className={`${experienceItem.hidden ? " hidden" : ""}`}>
+            <div id={`preview${experienceItem.id}`} key={experienceItem.id} className={`${experienceItem.hidden ? "experienceItem hidden" : "experienceItem"}`}>
               <div className="top">
                 <h3 className="institution">{experienceItem.institution}</h3>
                 <p className="location">{experienceItem.location}</p>

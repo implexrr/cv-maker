@@ -23,6 +23,23 @@
   background-color: white
 }
 
+h2.education.title, h2.experience.title {
+  border-bottom: 2px solid black;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Personal Details Preview */
+/* ------------------------------------------------------------------------------------- */
+
+#personalDetailsPreview {
+  background-color: var(--header-bg-color);
+  color: var(--header-fg-color);
+}
+
+.email.icon, .phone.icon, .address.icon {
+  background-color: unset;
+}
+
 /* ------------------------------------------------------------------------------------- */
 /* Reset Resume */
 /* ------------------------------------------------------------------------------------- */

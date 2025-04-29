@@ -5,7 +5,7 @@ const Education = ({educationData}) => {
       <div className="education details container">
         {educationData.map((educationItem) => {
           return (
-            <div id={`preview${educationItem.id}`} key={educationItem.id} className={`${educationItem.hidden ? " hidden" : ""}`}>
+            <div id={`preview${educationItem.id}`} key={educationItem.id} className={`${educationItem.hidden ? "educationItem hidden" : "educationItem"}`}>
               <div className="top">
                 <h3 className="institution">{educationItem.institution}</h3>
                 <p className="location">{educationItem.location}</p>

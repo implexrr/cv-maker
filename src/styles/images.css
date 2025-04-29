@@ -36,3 +36,20 @@ form.experience .formLabel.icon {
 .addCredential {
   background-image: url('../assets/plus.svg');
 }
+
+.email.icon, .phone.icon, .address.icon {
+  border-radius: 0px;
+  background-color: unset;
+}
+
+.email.icon {
+  background-image: url('../assets/mail.svg');
+}
+
+.phone.icon {
+  background-image: url('../assets/phone.svg');
+}
+
+.address.icon {
+  background-image: url('../assets/address.svg');
+}

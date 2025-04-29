@@ -11,7 +11,7 @@
 
   --clear-resume-fg-color: rgb(240, 18, 18);
 
-  --header-bg-color: #ef4444;
+  --header-bg-color: #0e374ee8;
   --header-fg-color: #f1f5f9;
 
   --icon-bg-bcolor: #23c4d6aa;
@@ -19,7 +19,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
