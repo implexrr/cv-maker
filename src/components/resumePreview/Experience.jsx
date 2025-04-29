@@ -1,14 +1,11 @@
-import slugify from "../../utils/slugify";
-
 const Experience = ({experienceData}) => {
   return (
     <div id="experiencePreview">
       <h2 className="experience title">Experience</h2>
       <div className="experience details container">
         {experienceData.map((experienceItem) => {
-          const key = slugify(`${experienceItem.institution}-${experienceItem.title}-${experienceItem.startDate}-${experienceItem.endDate}`);
           return (
-            <div key={key} className="experienceItem">
+            <div id={`preview${experienceItem.id}`} key={experienceItem.id} className={`${experienceItem.hidden ? " hidden" : ""}`}>
               <div className="top">
                 <h3 className="institution">{experienceItem.institution}</h3>
                 <p className="location">{experienceItem.location}</p>

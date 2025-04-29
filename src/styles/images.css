@@ -29,6 +29,10 @@ form.personalDetails .formLabel.icon  {
 form.education .formLabel.icon {
   background-image: url('../assets/education.svg');
 }
+form.experience .formLabel.icon {
+  background-image: url('../assets/experience.svg');
+  border-radius: 0px;
+}
 .addCredential {
   background-image: url('../assets/plus.svg');
 }
