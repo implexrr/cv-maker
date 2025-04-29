@@ -1,4 +1,4 @@
-import ResetForms from "./ResetForms"
+import ResetResume from "./ResetResume"
 import PersonalDetailsForm from "./PersonalDetailsForm"
 import EducationForm from "./EducationForm"
 import ExperienceForm from "./ExperienceForm"
@@ -8,7 +8,10 @@ const ResumeForm = ({ resumeData, setResumeData }) => {
   return (
     <div id="resumeFormContainer">
       <div id="resumeForm">
-        <ResetForms></ResetForms>
+        <ResetResume
+          resumeData={resumeData}
+          setResumeData={setResumeData}
+        />
         <PersonalDetailsForm
           personalDetails={resumeData.personalDetails}
           setResumeData={setResumeData}

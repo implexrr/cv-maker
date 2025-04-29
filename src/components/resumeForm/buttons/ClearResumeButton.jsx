@@ -1,6 +1,6 @@
-const ClearResumeButton = () => {
+const ClearResumeButton = ({clearResume}) => {
   return (
-    <button className="clearResume">
+    <button type="button" className="clearResume" onClick={clearResume}>
     <svg
       viewBox="0 0 48 48"
       width="36"
