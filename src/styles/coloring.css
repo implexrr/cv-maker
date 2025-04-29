@@ -23,6 +23,10 @@
   background-color: white
 }
 
+h2.education.title, h2.experience.title {
+  border-bottom: 2px solid black;
+}
+
 /* ------------------------------------------------------------------------------------- */
 /* Personal Details Preview */
 /* ------------------------------------------------------------------------------------- */

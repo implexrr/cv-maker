@@ -60,10 +60,13 @@ h1 {
 
 #resumePreviewContainer {
   padding: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 #resumePreview {
-  height: 100%;
+  width: 50rem;
+  height: 65rem;
   display: flex;
   flex-direction: column;
 }
