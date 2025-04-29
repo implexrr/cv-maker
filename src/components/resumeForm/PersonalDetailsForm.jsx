@@ -38,7 +38,7 @@ const PersonalDetailsForm = ({ personalDetails, setResumeData }) => {
               id="fullName"
               name="fullName"
               placeholder="Bob McJobhunter"
-              defaultValue={personalDetails.fullName}
+              value={personalDetails.fullName}
               onChange={handleChange}
               required
             />
@@ -51,7 +51,7 @@ const PersonalDetailsForm = ({ personalDetails, setResumeData }) => {
               id="address"
               name="address"
               placeholder="123 Maplevood Rd, ON, Canada"
-              defaultValue={personalDetails.address}
+              value={personalDetails.address}
               onChange={handleChange}
               required
             />
@@ -64,7 +64,7 @@ const PersonalDetailsForm = ({ personalDetails, setResumeData }) => {
               id="phone"
               name="phone"
               placeholder="647-967-1111"
-              defaultValue={personalDetails.phone}
+              value={personalDetails.phone}
               onChange={handleChange}
               required
             />
@@ -77,7 +77,7 @@ const PersonalDetailsForm = ({ personalDetails, setResumeData }) => {
               id="email"
               placeholder="pleasehireme42@gmail.com"
               name="email"
-              defaultValue={personalDetails.email}
+              value={personalDetails.email}
               onChange={handleChange}
               required
             />
