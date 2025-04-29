@@ -41,3 +41,10 @@ button.clearResume:hover, button.cancelSubmission:hover {
   border-radius: 20px;
   background-color: var(--icon-bg-bcolor);
 }
+
+.email.icon:hover, .phone.icon:hover, .address.icon:hover {
+  cursor: default;
+  background-color: unset;
+  opacity: 1;
+  border-radius: 0px;
+}

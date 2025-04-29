@@ -64,11 +64,12 @@ h1 {
 
 #resumePreview {
   height: 100%;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+}
+
+#resumePreview > * {
+  padding: 1rem;
 }
 
 /* ------------------------------------------------------------------------------------- */
@@ -90,14 +91,35 @@ h1 {
 }
 
 /* ------------------------------------------------------------------------------------- */
-/* Education */
+/* Education Preview */
 /* ------------------------------------------------------------------------------------- */
 
-.credentialSlice {
-  justify-content: space-between;
-  align-items: center;
+/* ------------------------------------------------------------------------------------- */
+/* Personal Details Preview */
+/* ------------------------------------------------------------------------------------- */
+
+#personalDetailsPreview {
   display: flex;
-  margin-top: 0.6rem;
+  flex-direction: column;
+}
+
+h2.personalDetails {
+  text-align: center;
+}
+
+.personalDetails.details.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.personalDetails.details.container > * {
+  padding: 0.3rem;
+  display: flex;
+}
+
+.personalDetails.details.container .icon {
+  margin-right: 0.3rem;
 }
 
 /* ------------------------------------------------------------------------------------- */
@@ -139,6 +161,13 @@ form > * {
   padding: 0.5rem;
 }
 
+.credentialSlice {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-top: 0.6rem;
+}
+
 /* ------------------------------------------------------------------------------------- */
 /* Buttons */
 /* ------------------------------------------------------------------------------------- */
@@ -168,4 +197,9 @@ button {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.icon.email, .icon.phone, .icon.address {
+  width: 1.3rem;
+  height: 1.3rem;
 }
