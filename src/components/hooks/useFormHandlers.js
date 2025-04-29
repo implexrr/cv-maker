@@ -3,7 +3,7 @@ import emptyForm from "../../data/emptyForm.json"
 
 import { useState } from "react";
 
-export function useFormHandlers({ resumeData, setResumeData, credentialType, formRef }) {
+export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
   const [formData, setFormData] = useState(emptyForm[credentialType]);
   const [isAddingCredential, setIsAddingCredential] = useState(false);
 
@@ -15,11 +15,8 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType, for
     setFormData(emptyForm[credentialType]);
   };
 
-  const saveSubmission = () => {
-    if (!formRef.current.checkValidity()) {
-      formRef.current.reportValidity();
-      return;
-    }
+  const saveSubmission = (e) => {
+    e.preventDefault();
     const slug = slugify(
       `${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`,
     );
@@ -33,6 +30,16 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType, for
     const newCredentials = resumeData[credentialType].filter((item) => item.id !== idToDelete);
     setCredentialData(newCredentials);
   };
+
+  const updateCredential = (idToUpdate, updatedItemData) => {
+    const slug = slugify(`${updatedItemData.institution}${updatedItemData.degree}${updatedItemData.startDate}${updatedItemData.endDate}`);
+    const newCredential = {
+      ...updatedItemData,
+      id : slug, type: credentialType, hidden: false
+    }
+    const newCredentials = resumeData[credentialType].map((item) => item.id === idToUpdate ? newCredential : item);
+    setCredentialData(newCredentials);
+  }
 
 
   const toggleCredentialVisibility = (idToToggle) => {
@@ -50,7 +57,8 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType, for
     isAddingCredential,
     toggleForm,
     saveSubmission,
-    deleteCredential,
-    toggleCredentialVisibility
+    toggleCredentialVisibility,
+    updateCredential,
+    deleteCredential
   };
 }

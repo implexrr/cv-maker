@@ -1,4 +1,5 @@
-import credentialFields from "../../data/credentialsFields.json"
+import credentialsFields from "../../data/credentialsFields.json"
+import slugify from "../../utils/slugify";
 
 import FormLabel from "./labels/FormLabel";
 import FormBody from "./body/FormBody";
@@ -6,22 +7,21 @@ import CredentialSlices from "./body/CredentialSlices";
 
 import { useFormHandlers } from "../hooks/useFormHandlers";
 import capitalize from "../../utils/capitalize";
-import { useRef } from "react";
 
 const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
-  const formRef = useRef(null);
   const {
     formData,
     setFormData,
     isAddingCredential,
     toggleForm,
     saveSubmission,
-    deleteCredential,
     toggleCredentialVisibility,
-  } = useFormHandlers({ resumeData, setResumeData, credentialType, formRef });
+    updateCredential,
+    deleteCredential,
+  } = useFormHandlers({ resumeData, setResumeData, credentialType });
 
   return (
-    <form ref={formRef} className={credentialType}>
+    <form onSubmit={saveSubmission} className={credentialType}>
       <FormLabel
         isAddingCredential={isAddingCredential}
         toggleForm={toggleForm}
@@ -29,18 +29,18 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
       />
       {isAddingCredential && (
         <FormBody
-          formRef={formRef}
           formData={formData}
           setFormData={setFormData}
           saveSubmission={saveSubmission}
           toggleForm={toggleForm}
-          credentialFields={credentialFields[credentialType]}
+          credentialFields={credentialsFields[credentialType]}
         />
       )}
       <CredentialSlices
         credentialType={credentialType}
         credentialItems={resumeData[credentialType]}
         toggleCredentialVisibility={toggleCredentialVisibility}
+        updateCredential={updateCredential}
         deleteCredential={deleteCredential}
       />
     </form>

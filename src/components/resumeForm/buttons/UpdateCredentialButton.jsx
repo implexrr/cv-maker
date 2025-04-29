@@ -1,6 +1,6 @@
-const SaveSubmissionButton = () => {
+const UpdateCredentialButton = ({triggerUpdate}) => {
   return (
-    <button type="submit" className="saveSubmission">
+    <button type="button" className="updateCredential" onClick={() => {triggerUpdate()}}>
     <svg
       viewBox="0 0 48 48"
       width="36"
@@ -29,9 +29,9 @@ const SaveSubmissionButton = () => {
         strokeLinejoin="round"
       />
     </svg>
-    <span>Save</span>
+    <span>Update</span>
   </button>
   )
 }
 
-export default SaveSubmissionButton
+export default UpdateCredentialButton
