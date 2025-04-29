@@ -18,7 +18,7 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
   const saveSubmission = (e) => {
     e.preventDefault();
     const slug = slugify(
-      `${formData.institution}${formData.degree}${formData.startDate}${formData.endDate}`,
+      `${formData.institution}${formData.startDate}${formData.endDate}`,
     );
     const newItem = { ...formData, id: slug, type: credentialType, hidden: false };
     setCredentialData([...resumeData[credentialType], newItem]);
@@ -32,7 +32,7 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
   };
 
   const updateCredential = (idToUpdate, updatedItemData) => {
-    const slug = slugify(`${updatedItemData.institution}${updatedItemData.degree}${updatedItemData.startDate}${updatedItemData.endDate}`);
+    const slug = slugify(`${updatedItemData.institution}${updatedItemData.startDate}${updatedItemData.endDate}`);
     const newCredential = {
       ...updatedItemData,
       id : slug, type: credentialType, hidden: false

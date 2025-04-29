@@ -7,7 +7,7 @@
   },
   "education": [
     {
-      "id": "lycelouislegrandhighschool18231828",
+      "id": "lycelouislegrand1823010118280101",
       "institution": "Lycée Louis-le-Grand",
       "degree": "High School",
       "startDate": "1823-01-01",
@@ -17,7 +17,7 @@
       "hidden": false
     },
     {
-      "id": "lcoleprparatoiremathematics1829present",
+      "id": "lcoleprparatoire1829010118300101",
       "institution": "l'École préparatoire",
       "degree": "Mathematics",
       "startDate": "1829-01-01",
@@ -29,11 +29,11 @@
   ],
   "experience": [
     {
-      "id": "TDL",
+      "id": "guardenationale1830010118310101",
       "institution": "Guarde Nationale",
       "title": "Artilleryman",
-      "startDate": "1830",
-      "endDate": "Present",
+      "startDate": "1830-01-01",
+      "endDate": "1838-01-01",
       "location": "144 Rue du Faubourg Saint-Martin, 75010 Paris, France",
       "description": "J'ai rêvé de tirer beaucoup de boulets de canon, mais je n'ai jamais vraiment fait grand-chose.",
       "type": "experience",
