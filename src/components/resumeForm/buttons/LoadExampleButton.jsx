@@ -1,6 +1,6 @@
-const LoadExampleButton = () => {
+const LoadExampleButton = ({loadDefaultResume}) => {
   return (
-    <button className="loadExample">
+    <button type="button" className="loadExample" onClick={() => {loadDefaultResume()}}>
     <svg
       viewBox="0 0 48 48"
       width="36"
