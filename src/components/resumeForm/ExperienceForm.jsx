@@ -1,9 +1,10 @@
-import { useState } from "react"
+import CredentialForm from "./CredentialForm";
 
-const ExperienceForm = ({ experience, setResumeData }) => {
+const ExperienceForm = ({ resumeData, setResumeData }) => {
   return (
-    <div>Experience Input</div>
-  )
+    <CredentialForm resumeData={resumeData} setResumeData={setResumeData} credentialType="experience"/>
+  );
 }
 
 export default ExperienceForm
+
