@@ -48,6 +48,7 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
         ? { ...item, hidden: !item.hidden }
         : item,
     );
+    console.log(newCredentials);
     setCredentialData(newCredentials);
   };
 
