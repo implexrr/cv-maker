@@ -1,4 +1,3 @@
-import capitalize from "../../../utils/capitalize";
 import slugify from "../../../utils/slugify";
 
 import SaveSubmissionButton from "../buttons/SaveSubmissionButton";
@@ -10,7 +9,7 @@ const FormBody = ({formData, setFormData, saveSubmission, toggleForm, credential
       {
         credentialFields.map((credentialField) => (
           <div key={ slugify(credentialField.name + credentialField.type + credentialField.labelText)} className={`${credentialField.name} inputContainer`}>
-          <label htmlFor={credentialField.name}>{capitalize(credentialField.labelText)}</label>
+          <label htmlFor={credentialField.name}>{credentialField.labelText}</label>
           <input
             type={credentialField.type}
             id={credentialField.name}

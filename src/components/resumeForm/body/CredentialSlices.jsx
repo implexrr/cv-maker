@@ -4,6 +4,7 @@ const CredentialSlices = ({
   credentialType,
   credentialItems,
   toggleCredentialVisibility,
+  updateCredential,
   deleteCredential
 }) => {
   return (
@@ -13,6 +14,7 @@ const CredentialSlices = ({
           key={credentialItem.id}
           credentialItem={credentialItem}
           toggleCredentialVisibility={toggleCredentialVisibility}
+          updateCredential={updateCredential}
           deleteCredential={deleteCredential}
         />
       ))}

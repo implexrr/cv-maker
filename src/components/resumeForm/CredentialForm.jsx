@@ -1,4 +1,5 @@
-import credentialFields from "../../data/credentialsFields.json"
+import credentialsFields from "../../data/credentialsFields.json"
+import slugify from "../../utils/slugify";
 
 import FormLabel from "./labels/FormLabel";
 import FormBody from "./body/FormBody";
@@ -14,8 +15,9 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
     isAddingCredential,
     toggleForm,
     saveSubmission,
-    deleteCredential,
     toggleCredentialVisibility,
+    updateCredential,
+    deleteCredential,
   } = useFormHandlers({ resumeData, setResumeData, credentialType });
 
   return (
@@ -31,13 +33,14 @@ const CredentialForm = ({ resumeData, setResumeData, credentialType }) => {
           setFormData={setFormData}
           saveSubmission={saveSubmission}
           toggleForm={toggleForm}
-          credentialFields={credentialFields[credentialType]}
+          credentialFields={credentialsFields[credentialType]}
         />
       )}
       <CredentialSlices
         credentialType={credentialType}
         credentialItems={resumeData[credentialType]}
         toggleCredentialVisibility={toggleCredentialVisibility}
+        updateCredential={updateCredential}
         deleteCredential={deleteCredential}
       />
     </form>

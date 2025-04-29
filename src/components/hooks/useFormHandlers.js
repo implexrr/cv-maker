@@ -31,6 +31,16 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
     setCredentialData(newCredentials);
   };
 
+  const updateCredential = (idToUpdate, updatedItemData) => {
+    const slug = slugify(`${updatedItemData.institution}${updatedItemData.degree}${updatedItemData.startDate}${updatedItemData.endDate}`);
+    const newCredential = {
+      ...updatedItemData,
+      id : slug, type: credentialType, hidden: false
+    }
+    const newCredentials = resumeData[credentialType].map((item) => item.id === idToUpdate ? newCredential : item);
+    setCredentialData(newCredentials);
+  }
+
 
   const toggleCredentialVisibility = (idToToggle) => {
     const newCredentials = resumeData[credentialType].map((item) =>
@@ -47,7 +57,8 @@ export function useFormHandlers({ resumeData, setResumeData, credentialType }) {
     isAddingCredential,
     toggleForm,
     saveSubmission,
-    deleteCredential,
-    toggleCredentialVisibility
+    toggleCredentialVisibility,
+    updateCredential,
+    deleteCredential
   };
 }
