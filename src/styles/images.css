@@ -53,3 +53,7 @@ form.experience .formLabel.icon {
 .address.icon {
   background-image: url('../assets/address.svg');
 }
+
+.githubLink.icon {
+  background-image: url('../assets/githubLink.svg');
+}

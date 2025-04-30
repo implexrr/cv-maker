@@ -48,3 +48,14 @@ button.clearResume:hover, button.cancelSubmission:hover {
   opacity: 1;
   border-radius: 0px;
 }
+
+
+.githubLink {
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.githubLink:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}

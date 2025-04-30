@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import Header from './components/header/Header'
 import ResumePreview from './components/resumePreview/ResumePreview'
 import ResumeForm from './components/resumeForm/ResumeForm'
+import Footer from "./components/footer/Footer"
 import sampleCV from "./data/sampleCV.json"
 import './styles/App.css'
 
@@ -16,6 +17,7 @@ function App() {
         setResumeData={setResumeData}
       />
       <ResumePreview resumeData={resumeData} />
+      <Footer/>
     </>
   );
 }
