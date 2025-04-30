@@ -5,7 +5,7 @@ const CredentialSlices = ({
   credentialItems,
   toggleCredentialVisibility,
   updateCredential,
-  deleteCredential
+  deleteCredential,
 }) => {
   return (
     <div className={`${credentialType}Slices`}>

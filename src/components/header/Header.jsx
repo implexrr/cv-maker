@@ -1,7 +1,5 @@
 const Header = () => {
-  return (
-    <h1>Resume Generator</h1>
-  )
-}
+  return <h1>Resume Generator</h1>;
+};
 
-export default Header
+export default Header;

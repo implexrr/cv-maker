@@ -1,4 +1,4 @@
-import credentialsFields from "../../data/credentialsFields.json"
+import credentialsFields from "../../data/credentialsFields.json";
 
 import FormLabel from "./labels/FormLabel";
 import FormBody from "./body/FormBody";

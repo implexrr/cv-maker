@@ -1,22 +1,32 @@
 import { useState } from "react";
 
+/**
+ * A form component for managing personal details input in a resume.
+ *
+ * @param {Object} props
+ * @param {Object} props.personalDetails - The current personal details data.
+ * @param {Function} props.setResumeData - Function to update the full resume data.
+ */
 const PersonalDetailsForm = ({ personalDetails, setResumeData }) => {
   const [isExpanded, setIsExpanded] = useState(true);
 
+  // Toggles form visibility (expanded/collapsed)
   const handleToggle = () => {
     setIsExpanded((expanded) => !expanded);
   };
 
+  // Updates the personalDetails section of the resumeData
   const setPersonalDetails = (personalDetails) =>
     setResumeData((resumeData) => ({ ...resumeData, personalDetails }));
 
+  // Handles changes to any of the input fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPersonalDetails({
       ...personalDetails,
       [name]: value,
     });
-  }
+  };
 
   return (
     <form className="personalDetails">

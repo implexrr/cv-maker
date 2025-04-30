@@ -1,19 +1,36 @@
 // TDL
 import slugify from "../../../utils/slugify";
-import credentialsFields from "../../../data/credentialsFields.json"
+import credentialsFields from "../../../data/credentialsFields.json";
 import UpdateCredentialButton from "../buttons/UpdateCredentialButton";
 import CancelUpdateButton from "../buttons/CancelUpdateButton";
 
-const EditForm = ({formData, setFormData, credentialItem, triggerUpdate, toggleEdit}) => {
+const EditForm = ({
+  formData,
+  setFormData,
+  credentialItem,
+  triggerUpdate,
+  toggleEdit,
+}) => {
   const credentialFields = credentialsFields[credentialItem.type];
   return (
     <div className="editCredentialForm">
       <div className="formBody">
-        {
-          credentialFields.map((credentialField) => (
-            <div key={credentialItem.id + slugify(credentialField.name + credentialField.type + credentialField.labelText)} className={`${credentialField.name} inputContainer`}>
-              <label htmlFor={credentialItem.id + credentialField.name}>{credentialField.labelText}</label>
-              <input
+        {credentialFields.map((credentialField) => (
+          <div
+            key={
+              credentialItem.id +
+              slugify(
+                credentialField.name +
+                  credentialField.type +
+                  credentialField.labelText,
+              )
+            }
+            className={`${credentialField.name} inputContainer`}
+          >
+            <label htmlFor={credentialItem.id + credentialField.name}>
+              {credentialField.labelText}
+            </label>
+            <input
               type={credentialField.type}
               id={credentialItem.id + credentialField.name}
               name={credentialField.name}
@@ -23,20 +40,15 @@ const EditForm = ({formData, setFormData, credentialItem, triggerUpdate, toggleE
               onChange={(e) => {
                 setFormData((prev) => ({
                   ...prev,
-                  [credentialField.name] : e.target.value,
-                }))
+                  [credentialField.name]: e.target.value,
+                }));
               }}
             />
-            </div>
-          ))
-        }
+          </div>
+        ))}
         <div className="buttonPair">
-          <UpdateCredentialButton
-            triggerUpdate={triggerUpdate}
-          />
-          <CancelUpdateButton
-            cancelUpdate={toggleEdit}
-          />
+          <UpdateCredentialButton triggerUpdate={triggerUpdate} />
+          <CancelUpdateButton cancelUpdate={toggleEdit} />
         </div>
       </div>
     </div>
@@ -44,4 +56,3 @@ const EditForm = ({formData, setFormData, credentialItem, triggerUpdate, toggleE
 };
 
 export default EditForm;
-
