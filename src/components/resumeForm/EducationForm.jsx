@@ -2,7 +2,11 @@ import CredentialForm from "./CredentialForm";
 
 const EducationForm = ({ resumeData, setResumeData }) => {
   return (
-    <CredentialForm resumeData={resumeData} setResumeData={setResumeData} credentialType="education"/>
+    <CredentialForm
+      resumeData={resumeData}
+      setResumeData={setResumeData}
+      credentialType="education"
+    />
   );
 };
 
